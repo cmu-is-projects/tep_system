@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  teacher: one
+  shopping_date: 2018-03-06
+  date_entered: 2018-03-06
+  uploaded: false
+
+two:
+  user: two
+  teacher: two
+  shopping_date: 2018-03-06
+  date_entered: 2018-03-06
+  uploaded: false
