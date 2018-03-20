@@ -3,6 +3,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
     create_table :items do |t|
       t.string :name
       t.integer :max_packs
+      t.integer :qty_per_unit
       t.boolean :active
 
       t.timestamps

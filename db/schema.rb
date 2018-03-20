@@ -10,35 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307004741) do
-
-  create_table "item_histories", force: :cascade do |t|
-    t.integer "item_id"
-    t.integer "units_per_pack"
-    t.date "start_date"
-    t.date "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_item_histories_on_item_id"
-  end
+ActiveRecord::Schema.define(version: 20180307004720) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "max_packs"
+    t.integer "qty_per_unit"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string "salesforce_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "salesforce_id"
     t.integer "school_id"
     t.string "first_name"
     t.string "last_name"
