@@ -11,6 +11,8 @@ FactoryGirl.define do
     quantity 5
   end
 
+  #following factories used for purpose of testing transaction and transaction_items
+
   factory :user do
     username "admin"
     password_digest "password"
@@ -29,5 +31,12 @@ FactoryGirl.define do
 
   factory :school do
     name "Carnegie Mellon University"
+  end
+
+  factory :item do
+    name "Pencils"
+    max_packs 8
+    qty_per_unit 10
+    active true
   end
 end

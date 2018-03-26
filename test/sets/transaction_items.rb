@@ -3,19 +3,15 @@ module Contexts
     # Context for transactions (assumes no prior contexts)
 
     def create_transaction_items
-      @transaction_items_1 = FactoryGirl.create(:transaction_item)
-      @transaction_items_2  = FactoryGirl.create(:transaction, 
-        shopping_date: Date.current - 2.days, uploaded: false)
-      @transaction_items_3  = FactoryGirl.create(:transaction, 
-        shopping_date: Date.current - 5.days, 
-        date_entered: Date.current - 3.days, 
-        uploaded: true)
+      @transaction1_items = FactoryGirl.create(:transaction_item, transaction: @transaction_1, item: @item)
+      @transaction2_items = FactoryGirl.create(:transaction_item, transaction: @transaction_2, item: @item, quantity: 0)
+      @transaction3_items = FactoryGirl.create(:transaction_item, transaction: @transaction_3, item: @item, quantity: 10)
     end
 
     def destroy_transaction_items
-      @transaction_items_1.delete
-      @transaction_items_2.delete
-      @transaction_items_3.delete
+      @transaction1_items.delete
+      @transaction2_items.delete
+      @transaction3_items.delete
     end
 
   end

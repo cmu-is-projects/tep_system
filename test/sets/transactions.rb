@@ -3,12 +3,12 @@ module Contexts
     # Context for transactions (assumes no prior contexts)
 
     def create_transactions
-      @transaction_1 = FactoryGirl.create(:transaction)
-      @transaction_2  = FactoryGirl.create(:transaction, 
-        shopping_date: Date.current - 2.days, uploaded: false)
-      @transaction_3  = FactoryGirl.create(:transaction, 
-        shopping_date: Date.current - 5.days, 
-        date_entered: Date.current - 3.days, 
+      @transaction_1 = FactoryGirl.create(:transaction, user: @user, teacher: @teacher)
+      @transaction_2  = FactoryGirl.create(:transaction, user: @user, teacher: @teacher, 
+        shopping_date: 2.days.ago.to_date, uploaded: false)
+      @transaction_3  = FactoryGirl.create(:transaction, user: @user, teacher: @teacher,
+        shopping_date: 5.days.ago.to_date, 
+        date_entered: 3.days.ago.to_date, 
         uploaded: true)
     end
 
