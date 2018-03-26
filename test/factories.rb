@@ -1,25 +1,33 @@
 FactoryGirl.define do
-  factory :item do
-    name "Vinyl Chess Board - Green & White"
-    description "These Vinyl Chess Boards are just what their name implies - a good basic chess board which meets all tournament standards. Board measures 20x20 inches with 2.25 inch square and all boards have clear and legible algebraic notation."
-    color "green/white"
-    category "boards"
-    weight 0.5
-    inventory_level 100
-    reorder_level 25
+  factory :transaction do
+    association :user
+    association :teacher
+    shopping_date Date.current
+    date_entered Date.current
+    uploaded false
+  end
+
+  factory :transaction_item do
+    quantity 5
+  end
+
+  factory :user do
+    username "admin"
+    password_digest "password"
+    first_name "Catherine"
+    last_name "Price"
+    email "cat@theeducationpartnership.org"
+    role "Administrator"
     active true
   end
 
-  factory :item_price do
-    association :item
-    price 1.00
-    start_date Date.current
-    end_date nil
+  factory :teacher do
+    association :school
+    first_name "Amy"
+    last_name "Lin"
   end
 
-  factory :purchase do
-    association :item
-    quantity 1
-    date Date.current
+  factory :school do
+    name "Carnegie Mellon University"
   end
 end
