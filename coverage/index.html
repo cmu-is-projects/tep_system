@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-03-27T15:12:50-04:00">2018-03-27T15:12:50-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-03-27T15:38:17-04:00">2018-03-27T15:38:17-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">46.67%</span></span>
+    (<span class="covered_percent"><span class="red">45.65%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.91
+         1.93
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>13</b> files in total.
-    <b>45</b> relevant lines. 
+    <b>46</b> relevant lines. 
     <span class="green"><b>21</b> lines covered</span> and
-    <span class="red"><b>24</b> lines missed </span>
+    <span class="red"><b>25</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -124,9 +124,9 @@
         <td class="strong"><a href="#4b2dbbc005d685d56613c021aa8f5df88c46f9a2" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
         <td class="red strong">0.0 %</td>
         <td>5</td>
-        <td>2</td>
+        <td>3</td>
         <td>0</td>
-        <td>2</td>
+        <td>3</td>
         <td>0.0</td>
       </tr>
       
@@ -157,7 +157,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>6.0</td>
+        <td>6.2</td>
       </tr>
       
       <tr>
@@ -293,20 +293,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">74.07%</span></span>
+    (<span class="covered_percent"><span class="red">71.43%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.15
+         3.13
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>7</b> files in total.
-    <b>27</b> relevant lines. 
+    <b>28</b> relevant lines. 
     <span class="green"><b>20</b> lines covered</span> and
-    <span class="red"><b>7</b> lines missed </span>
+    <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -336,9 +336,9 @@
         <td class="strong"><a href="#4b2dbbc005d685d56613c021aa8f5df88c46f9a2" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
         <td class="red strong">0.0 %</td>
         <td>5</td>
-        <td>2</td>
+        <td>3</td>
         <td>0</td>
-        <td>2</td>
+        <td>3</td>
         <td>0.0</td>
       </tr>
       
@@ -369,7 +369,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>6.0</td>
+        <td>6.2</td>
       </tr>
       
       <tr>
@@ -855,9 +855,9 @@
     <h3>app/models/item.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
+      <b>3</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -870,10 +870,10 @@
           <code class="ruby">class Item &lt; ApplicationRecord</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="missed" data-hits="0" data-linenumber="2">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    has_many :transaction_item</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -1065,8 +1065,8 @@
           <code class="ruby">  #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="9">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="32" data-linenumber="9">
+          <span class="hits">32</span>
           
           <code class="ruby">  validates_date :date_entered, on_or_before: lambda { Date.current }</code>
         </li>
