@@ -3,7 +3,7 @@ module Contexts
     # Context for schools (assumes no prior contexts)
 
     def create_schools
-      @school = FactoryGirl.create(:school)
+      @school = FactoryBot.create(:school)
     end
 
     def destroy_transactions

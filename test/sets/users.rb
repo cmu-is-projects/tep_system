@@ -3,11 +3,11 @@ module Contexts
     # Context for users (assumes no prior contexts)
 
     def create_users
-      @admin = FactoryGirl.create(:user)
+      @user = FactoryBot.create(:user)
     end
 
     def destroy_users
-      @admin.delete
+      @user.delete
     end
 
   end
