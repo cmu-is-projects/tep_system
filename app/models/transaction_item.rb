@@ -5,7 +5,8 @@ class TransactionItem < ApplicationRecord
 
   #Validations
   validates_numericality_of :quantity, greater_than_or_equal_to: 0
-  #validate :item_is_active_in_system
+  # validate :item_is_active_in_system
+  # maybe write validation for quantity and max_quantity
 
   # Other methods
   # private

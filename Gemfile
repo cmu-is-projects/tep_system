@@ -34,12 +34,27 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+    # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'factory_girl'
+  gem 'capybara', '2.17.0'
+  gem 'selenium-webdriver', '3.8.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request', '0.5.0'
+  gem 'hirb', '0.7.3'
+  gem 'faker', '1.8.7'
+  gem 'populator', '1.0.0'
+  gem 'factory_bot_rails', '4.8.2'
+  gem 'simplecov', '0.15.1'
+  gem 'shoulda', '3.5.0'
+  gem 'shoulda-matchers', '2.8.0'
+  gem 'minitest-rails', '3.0.0'
+  gem 'minitest-reporters', '1.1.19'
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :development do
@@ -50,6 +65,19 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+# Other gems
+gem 'chronic', '0.10.2'
+gem 'materialize-sass', '0.100.2'
+gem 'simple_form', '3.5.0'
+gem 'materialize-form', '1.0.8'
+gem 'jquery-rails', '4.3.1'
+gem 'jquery-ui-rails', '6.0.1'
+gem 'cancancan', '2.1.2'
+gem 'validates_timeliness', '4.0.2'
+gem 'time_date_helpers', '0.0.2'
+gem 'carrierwave', '1.2.2'
+gem 'will_paginate', '3.1.6'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

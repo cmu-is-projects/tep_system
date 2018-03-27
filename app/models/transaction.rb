@@ -5,13 +5,17 @@ class Transaction < ApplicationRecord
 
   #Validations
   validates_date :shopping_date, on_or_before: lambda { Date.current }
-  validates_date :date_entered, on: lambda { Date.current }
+  validates_date :date_entered, on: lambda { Date.current }, on: :create
+  validates_date :date_entered, on_or_before: lambda { Date.current } #is this written correctly
+  validates_date :date_entered, on_or_after: :shopping_date
 
   #Scopes
   scope :for_shopping_date, ->(date) { where(shopping_date: date) }
   scope :for_date_entered, ->(date) { where(date_entered: date) }
   scope :for_teacher, ->(teacher_id) { where(teacher_id: teacher_id) }
-  scope :chronological, -> { order(date: :desc ) }
+  scope :shop_chronological, -> { order(shopping_date: :desc ) } 
+  scope :enter_chronological, -> { order(date_entered: :desc ) } 
+
   scope :uploaded, -> { where(uploaded: true) }
   scope :not_uploaded, -> { where(uploaded: false) }
 end
