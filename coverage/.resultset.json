@@ -5,6 +5,53 @@
         1,
         null
       ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/school.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/user.rb": [
+        1,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/teacher.rb": [
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/transaction.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        31,
+        null,
+        29,
+        1,
+        null,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        2,
+        2,
+        null
+      ],
       "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -32,54 +79,11 @@
         0,
         0
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/application_record.rb": [
-        0,
-        0,
-        0
-      ],
       "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/item.rb": [
         0,
         null,
         null,
         null,
-        0
-      ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/school.rb": [
-        0,
-        0,
-        null,
-        null,
-        null,
-        0
-      ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/teacher.rb": [
-        0,
-        0,
-        null,
-        null,
-        0
-      ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/transaction.rb": [
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
         0
       ],
       "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/transaction_item.rb": [
@@ -102,12 +106,8 @@
         null,
         null,
         0
-      ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/user.rb": [
-        0,
-        0
       ]
     },
-    "timestamp": 1522168025
+    "timestamp": 1522177970
   }
 }

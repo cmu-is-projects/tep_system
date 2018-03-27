@@ -5,8 +5,8 @@ class Transaction < ApplicationRecord
 
   #Validations
   validates_date :shopping_date, on_or_before: lambda { Date.current }
-  validates_date :date_entered, on: lambda { Date.current }, on: :create
-  validates_date :date_entered, on_or_before: lambda { Date.current } #is this written correctly
+  #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable
+  validates_date :date_entered, on_or_before: lambda { Date.current }
   validates_date :date_entered, on_or_after: :shopping_date
 
   #Scopes

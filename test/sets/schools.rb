@@ -6,7 +6,7 @@ module Contexts
       @school = FactoryBot.create(:school)
     end
 
-    def destroy_transactions
+    def destroy_schools
       @school.delete
     end
 

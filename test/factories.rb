@@ -7,9 +7,11 @@ FactoryBot.define do
     uploaded false
   end
 
-  factory :transaction_item do
-    quantity 5
-  end
+  # factory :transaction_item do
+  #   association :transaction
+  #   association :item
+  #   quantity 5
+  # end
 
   #following factories used for purpose of testing transaction and transaction_items
 
