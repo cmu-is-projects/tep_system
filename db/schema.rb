@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307004720) do
+ActiveRecord::Schema.define(version: 20180327193135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20180307004720) do
     t.integer "user_id"
     t.integer "teacher_id"
     t.date "shopping_date"
-    t.date "date_entered"
+    t.date "date_entered", default: "2018-03-27"
     t.boolean "uploaded"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
