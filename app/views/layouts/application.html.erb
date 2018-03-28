@@ -8,13 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div id="nav">
-      <ul>
-        <li><%= link_to 'Data Entry Form', form_path %></li>
-        <li><%= link_to 'Core Items', items_path %></li>
-        <li><%= link_to 'Transactions', transactions_path %></li>
-      </ul>
-    </div> 
+    <%= render :partial => "partials/nav" %>
     <%= yield %>
   </body>
 </html>
