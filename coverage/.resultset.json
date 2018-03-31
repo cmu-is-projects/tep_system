@@ -1,11 +1,46 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/helpers/application_helper.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/school.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/helpers/transactions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/controllers/transactions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/school.rb": [
         1,
         1,
         null,
@@ -13,23 +48,23 @@
         null,
         null
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/application_record.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/user.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/user.rb": [
         1,
         null
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/teacher.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/teacher.rb": [
         1,
         1,
         null,
         null,
         null
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/transaction.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/transaction.rb": [
         1,
         null,
         1,
@@ -52,41 +87,36 @@
         2,
         null
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/channels/application_cable/channel.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/channels/application_cable/connection.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0
-      ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/jobs/application_job.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/mailers/application_mailer.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/item.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/item.rb": [
         0,
         0,
         null,
         null,
         0
       ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/transaction_item.rb": [
+      "/Users/Shirley/Desktop/s18/67373/tep/tep_system/app/models/transaction_item.rb": [
         0,
         null,
         0,
@@ -108,6 +138,6 @@
         0
       ]
     },
-    "timestamp": 1522179497
+    "timestamp": 1522256659
   }
 }
