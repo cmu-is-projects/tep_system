@@ -1,0 +1,23 @@
+<h1>Transactions#index</h1>
+<% if @transactions.empty? %>
+    <p>No transactions in the system right now</p>
+<% else %>
+<table class="striped highlight"> 
+    <thead>
+        <th>Name</th>
+        <th>School</th>
+        <th>Shopping Date</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Semester</th>
+        <th>Date Entered</th>
+    </thead>
+    <% for transaction in @transactions %>
+        <tr>
+
+        </tr>
+    <% end %>
+</table>
+
+
+
