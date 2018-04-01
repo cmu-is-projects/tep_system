@@ -1,5 +1,18 @@
-<%= f.input :first_name%>
-<%= f.input :last_name %>
-<%= f.input :phone %>
-<%= f.input :email %>
-<%= f.input :active %>
+<%= simple_form_for(@pet) do |f| %>
+    <%= f.error_notification %>
+    <div class="row">
+        <div class="form-inputs">
+            <%= f.input :teacher_id, collection: Teacher.alphabetical.to_a, include_blank: true %>
+            <%= f.input :last_name %>
+            <%= f.input :phone %>
+            <%= f.input :email %>
+            <%= f.input :active %>
+            <% for item in @items%>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="form-actions col s8">
+        <%= f.button :submit %>
+    </div>
+</div>
