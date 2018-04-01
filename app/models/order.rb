@@ -1,4 +1,4 @@
-class Transaction < ApplicationRecord
+class Order < ApplicationRecord
   #Relationships
   belongs_to :user
   belongs_to :teacher
