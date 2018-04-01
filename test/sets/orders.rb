@@ -11,7 +11,7 @@ module Contexts
         date_entered: 3.days.ago.to_date, uploaded: true)
     end
 
-    def destroy_transactions
+    def destroy_orders
       @order_1.delete
       @order_2.delete
       @order_3.delete

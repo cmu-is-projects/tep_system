@@ -1,23 +1,27 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @order = FactoryBot.create(:order)
+  end 
+
   test "should get index" do
-    get orders_index_url
+    get orders_path
     assert_response :success
   end
 
   test "should get edit" do
-    get orders_edit_url
+    get edit_order_path(@order)
     assert_response :success
   end
 
   test "should get new" do
-    get orders_new_url
+    get new_order_path
     assert_response :success
   end
 
   test "should get show" do
-    get orders_show_url
+    get order_path(@order)
     assert_response :success
   end
 
