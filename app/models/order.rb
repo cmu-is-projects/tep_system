@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   belongs_to :teacher
 
   #Validations
+  validates_presence_of :user, :teacher, :date_entered
   validates_date :shopping_date, on_or_before: lambda { Date.current }
   #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable
   validates_date :date_entered, on_or_before: lambda { Date.current }

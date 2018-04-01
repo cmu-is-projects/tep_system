@@ -7,6 +7,9 @@ class TransactionTest < ActiveSupport::TestCase
   should belong_to(:teacher)
 
   # test validations with matchers
+  should validate_presence_of(:user)
+  should validate_presence_of(:teacher)
+  should validate_presence_of(:date_entered)
   should allow_value(Date.current).for(:shopping_date)
   should allow_value(2.days.ago.to_date).for(:shopping_date)
   should_not allow_value(2.days.from_now.to_date).for(:shopping_date)
@@ -43,14 +46,10 @@ class TransactionTest < ActiveSupport::TestCase
     end 
 
 #Questionable Test
-    # should "check to make sure that date_entered on creation is today's date" do
-    #   @bad_trans = FactoryBot.build(:transaction, user: @user, teacher: @teacher, date_entered: 9.days.ago.to_date, shopping_date: 10.days.ago.to_date)
-    #   deny @bad_trans.valid?
-
-    #   #after creation
-    #   @gvalid_date = FactoryBot.build(:transaction, user: @user, teacher: @teacher, date_entered: 1.day.ago.to_date, shopping_date: 1.day.ago.to_date)
-    #   @valid_date.valid?
-    # end
+    should "check to make sure that date_entered on creation is today's date" do
+      @trans = FactoryBot.build(:transaction, user: @user, teacher: @teacher, shopping_date: 10.days.ago.to_date)
+      assert_equal Date.current, @trans.date_entered
+    end
 
     should "have a working scope called for_shopping_date" do
         assert_equal [3.days.ago.to_date, Date.current], Transaction.for_shopping_date(5.days.ago.to_date).all.map(&:date_entered).sort
