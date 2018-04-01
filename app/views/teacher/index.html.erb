@@ -1,0 +1,28 @@
+<h1>Teachers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>School Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.first_name__c %></td>
+        <td><%= teacher.last_name__c %></td>
+        <td><%= teacher.primary_affiliation__c %></td>
+        <td><%= teacher.work_email__c %></td>
+        <td><%= teacher.work_phone__c %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
