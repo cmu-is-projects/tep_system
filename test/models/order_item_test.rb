@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class TransactionItemTest < ActiveSupport::TestCase
+class OrderItemTest < ActiveSupport::TestCase
 
-  #CONFLICT IN FACTORY --> Method named transaction already implemented by ActiveRecord
+  #CONFLICT IN FACTORY --> Method named order already implemented by ActiveRecord
     
   # # test relationships
-  # should belong_to(:transaction)
+  # should belong_to(:order)
   # should belong_to(:item)
 
   # # test validations with matchers

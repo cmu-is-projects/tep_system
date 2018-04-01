@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :transaction do
+  factory :order do
     association :user
     association :teacher
     shopping_date Date.current
@@ -7,13 +7,13 @@ FactoryBot.define do
     uploaded false
   end
 
-  # factory :transaction_item do
-  #   association :transaction
+  # factory :order_item do
+  #   association :order
   #   association :item
   #   quantity 5
   # end
 
-  #following factories used for purpose of testing transaction and transaction_items
+  #following factories used for purpose of testing order and order_items
 
   factory :user do
     username "admin"
