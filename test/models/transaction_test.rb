@@ -43,14 +43,10 @@ class TransactionTest < ActiveSupport::TestCase
     end 
 
 #Questionable Test
-    # should "check to make sure that date_entered on creation is today's date" do
-    #   @bad_trans = FactoryBot.build(:transaction, user: @user, teacher: @teacher, date_entered: 9.days.ago.to_date, shopping_date: 10.days.ago.to_date)
-    #   deny @bad_trans.valid?
-
-    #   #after creation
-    #   @gvalid_date = FactoryBot.build(:transaction, user: @user, teacher: @teacher, date_entered: 1.day.ago.to_date, shopping_date: 1.day.ago.to_date)
-    #   @valid_date.valid?
-    # end
+    should "check to make sure that date_entered on creation is today's date" do
+      @bad_trans = FactoryBot.build(:transaction, user: @user, teacher: @teacher, shopping_date: 10.days.ago.to_date)
+      deny @bad_trans.valid?
+    end
 
     should "have a working scope called for_shopping_date" do
         assert_equal [3.days.ago.to_date, Date.current], Transaction.for_shopping_date(5.days.ago.to_date).all.map(&:date_entered).sort
