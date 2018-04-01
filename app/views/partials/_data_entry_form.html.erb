@@ -1,4 +1,4 @@
-<%= simple_form_for(@pet) do |f| %>
+<%= simple_form_for(@transaction) do |f| %>
     <%= f.error_notification %>
     <div class="row">
         <div class="form-inputs">
@@ -8,6 +8,8 @@
             <%= f.input :email %>
             <%= f.input :active %>
             <% for item in @items%>
+
+            <%end%>
         </div>
     </div>
 
