@@ -3,7 +3,7 @@ require 'test_helper'
 class TransactionsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get transactions_index_url
-    assert_response :success
+    assert_response :success, @response.body
   end
 
   test "should get edit" do
