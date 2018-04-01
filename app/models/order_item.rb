@@ -1,6 +1,6 @@
-class TransactionItem < ApplicationRecord
+class OrderItem < ApplicationRecord
   #Relationships
-  belongs_to :transaction
+  belongs_to :order
   belongs_to :item
 
   #Validations
