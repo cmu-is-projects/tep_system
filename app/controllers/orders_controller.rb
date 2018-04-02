@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
-      flash[:notice] = "Successfully added #{@order.name}."
+      flash[:notice] = "Successfully added #{@order.id}."
       redirect_to @order
     else
       render action: 'new'
@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update_attributes(order_params)
-      flash[:notice] = "Successfully updated #{@order.name}."
+      flash[:notice] = "Successfully updated #{@order.id}."
       redirect_to @order
     else
       render action: 'edit'

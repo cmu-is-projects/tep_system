@@ -2,13 +2,13 @@ require 'test_helper'
 
 class OrderItemTest < ActiveSupport::TestCase
 
-  #CONFLICT IN FACTORY --> Method named order already implemented by ActiveRecord
-    
-  # # test relationships
-  # should belong_to(:order)
-  # should belong_to(:item)
+  # test relationships
+  should belong_to(:order)
+  should belong_to(:item)
 
-  # # test validations with matchers
-  # should validate_numericality_of(:quantity).is_greater_than_or_equal_to(0)
+  # test validations with matchers
+  should validate_presence_of(:order)
+  should validate_presence_of(:item)
+  should validate_numericality_of(:quantity).is_greater_than_or_equal_to(0)
 
 end
