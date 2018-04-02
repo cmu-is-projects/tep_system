@@ -13,6 +13,33 @@
         1,
         null
       ],
+      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/order_item.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/order.rb": [
         1,
         null,
@@ -21,9 +48,9 @@
         null,
         null,
         1,
-        38,
+        37,
         null,
-        41,
+        40,
         1,
         null,
         null,
@@ -37,9 +64,13 @@
         2,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/application_record.rb": [
+      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/item.rb": [
         1,
         1,
+        null,
+        null,
+        null,
+        2,
         null
       ],
       "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/user.rb": [
@@ -57,7 +88,7 @@
         1,
         null,
         1,
-        2,
+        1,
         null,
         null
       ],
@@ -74,7 +105,7 @@
       "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/orders_controller.rb": [
         1,
         1,
-        1,
+        0,
         null,
         null,
         1,
@@ -123,15 +154,6 @@
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/item.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        2,
-        null
-      ],
       "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/teachers_controller.rb": [
         1,
         1,
@@ -167,29 +189,8 @@
         0,
         0,
         0
-      ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/order_item.rb": [
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0
       ]
     },
-    "timestamp": 1522684813
+    "timestamp": 1522685330
   }
 }
