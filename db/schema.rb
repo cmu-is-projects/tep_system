@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327193135) do
+ActiveRecord::Schema.define(version: 20180402153041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,28 +59,6 @@ ActiveRecord::Schema.define(version: 20180327193135) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_teachers_on_school_id"
-  end
-
-  create_table "transaction_items", force: :cascade do |t|
-    t.integer "transaction_id"
-    t.integer "item_id"
-    t.integer "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_transaction_items_on_item_id"
-    t.index ["transaction_id"], name: "index_transaction_items_on_transaction_id"
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "teacher_id"
-    t.date "shopping_date"
-    t.date "date_entered", default: "2018-03-28"
-    t.boolean "uploaded"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["teacher_id"], name: "index_transactions_on_teacher_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

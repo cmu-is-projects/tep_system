@@ -23,7 +23,7 @@
         2,
         2,
         2,
-        3,
+        2,
         null,
         2,
         2,
@@ -31,10 +31,6 @@
       ],
       "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/application_record.rb": [
         1,
-        1,
-        null
-      ],
-      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/user.rb": [
         1,
         null
       ],
@@ -53,6 +49,10 @@
         null,
         null
       ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/user.rb": [
+        1,
+        null
+      ],
       "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/school.rb": [
         1,
         1,
@@ -65,15 +65,12 @@
       ],
       "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/controllers/orders_controller.rb": [
         1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
         null,
         1,
         1,
+        null,
+        1,
+        0,
         null,
         null,
         1,
@@ -81,15 +78,13 @@
         null,
         1,
         0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
         null,
         null,
         1,
+        null,
+        null,
+        1,
+        0,
         0,
         0,
         0,
@@ -99,6 +94,24 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         null
@@ -161,6 +174,6 @@
         0
       ]
     },
-    "timestamp": 1522641963
+    "timestamp": 1522642300
   }
 }
