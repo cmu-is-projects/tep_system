@@ -1,9 +1,12 @@
 require "test_helper"
 
-describe SchoolController do
-  it "should get index" do
-    get school_index_url
-    value(response).must_be :success?
-  end
+class SchoolsControllerTest < ActionDispatch::IntegrationTest
+	setup do 
+		@school = FactoryBot.create(:school)
+	end 
 
+	test "should get index" do 
+		get schools_path
+		assert_response :success
+	end
 end
