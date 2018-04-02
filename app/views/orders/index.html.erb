@@ -1,8 +1,4 @@
 
-
-<h1>Orders#index</h1>
-
-
 <h1>Orders#index</h1>
 <% if @orders.empty? %>
     <p>No orders in the system right now</p>
@@ -20,10 +16,10 @@
     </thead>
     <% for order in @orders %>
         <tr>
-            <td><%= link_to( order.teacher.name, order_path(order.teacher) %></td>
-            <td><%= link_to( order.teacher.school.name, order_path(order.teacher) %></td>
+            <td><%= link_to( order.teacher.name, order_path(order.teacher)) %></td>
+            <td><%= link_to( order.teacher.school.name, order_path(order.teacher)) %></td>
             <td><%= order.shopping_date %></td>
-            <td><%= link_to(order.item.name, order_path(order.item) %></td>
+            <td><%= link_to(order.item.name, order_path(order.item)) %></td>
             <td><%= order.quantity %></td>
             <td><%= order.date_entered %></td>
 

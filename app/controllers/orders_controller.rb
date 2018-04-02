@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.enter_chronological.paginate(page: params[:page]).per_page(10)
+    @orders = Order.all #enter_chronological.paginate(page: params[:page]).per_page(10)
   end
 
   def edit
@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @items = Item.active.all
   end
 
   def show
@@ -32,7 +33,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  def destroy 
-  end
+def destroy 
+end
 
 end

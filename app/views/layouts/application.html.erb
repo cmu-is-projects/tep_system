@@ -8,9 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if logged_in? %>
+    <%# if logged_in? %>
         <%= render :partial => "partials/nav" %>
-    <%end%>
+    <%#end%>
     <%= yield %>
   </body>
 </html>
