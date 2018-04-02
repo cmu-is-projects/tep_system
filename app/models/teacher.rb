@@ -4,10 +4,10 @@ class Teacher < ApplicationRecord
   # this item is synced to Salesforce teachers using Heroku Connect
   #self.table_name = "salesforce.teacher__c"
 
-  scope :alphabetical, ->{order(:lastname, :firstname)}
+  scope :alphabetical, ->{order(:last_name, :first_name)}
   scope :for_school, ->(school_sfid){where(XXX: school_sfid)}
 
   def name
-  	"#{lastname}, #{firstname}"
+  	"#{last_name}, #{first_name}"
   end
 end

@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @items = Item.active.all
   end
 
   def show
