@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
   def index
-  	@teachers = [] #Teacher.all
+  	@teachers = Teacher.all
   end
 end
