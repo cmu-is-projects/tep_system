@@ -4,12 +4,14 @@ html {
   // font-family: 'Bitter', serif;
   // font-family: 'Josefin Sans', sans-serif;
   // font-family: 'Varela Round', sans-serif;
+  background-color: #CDE7F7;
 }
 
 /********** TOPBAR & NAV ********/
 
 #nav {
   background-color: white;
+  box-shadow: none !important;
 }
 
 #nav ul a {
