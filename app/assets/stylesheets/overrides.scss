@@ -42,6 +42,13 @@ html {
   color: #800000;
 }
 
+/********** BODY ********/
+
+h1 {
+  font-size: 2rem !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
 /********** FOOTER ********/
 
 #footer {
@@ -58,6 +65,14 @@ html {
 }
 
 /********** TABLES ********/
+table {
+  font-family: 'Roboto', sans-serif;  
+}
+
+table thead {
+  font-weight: bold !important;
+}
+
 table.striped > tbody > tr:nth-child(odd) {
   background-color: #fff;
 }
@@ -67,7 +82,7 @@ table.striped > tbody > tr:nth-child(even) {
 }
 
 table.highlight > tbody > tr:hover {
-  background-color: #fff59d;
+  background-color: #F5DCC1 !important;
 }
 
 td.align_right {
