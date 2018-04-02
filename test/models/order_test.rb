@@ -27,10 +27,10 @@ class OrderTest < ActiveSupport::TestCase
     end
     
     teardown do
+      destroy_orders
+      destroy_teachers
       destroy_schools
       destroy_users
-      destroy_teachers
-      destroy_orders
     end
 
 

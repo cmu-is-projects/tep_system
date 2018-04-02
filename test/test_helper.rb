@@ -21,4 +21,7 @@ class ActiveSupport::TestCase
     # a simple transformation to increase readability IMO
     assert !condition, msg
   end
+
+  # Spruce up minitest results...
+  Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
 end
