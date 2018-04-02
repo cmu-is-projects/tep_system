@@ -1,26 +1,19 @@
 html {
   // Preloaded with four fonts; uncomment the one you prefer
-  //font-family: 'Open Sans', sans-serif;
-  //font-family: 'Bitter', serif;
-  //font-family: 'Josefin Sans', sans-serif;
-  //font-family: 'Varela Round', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  // font-family: 'Bitter', serif;
+  // font-family: 'Josefin Sans', sans-serif;
+  // font-family: 'Varela Round', sans-serif;
 }
 
 /********** TOPBAR & NAV ********/
-#topbar {
-  background-color: white;
-  padding-top: 5px;
-  margin-bottom: 0px;
-  color: #ffd600;
-}
 
 #nav {
   background-color: white;
-  height: 50px;
 }
 
 #nav ul a {
-  color: #ffd600;
+  color: #4F4F4F;
   font-size: 1.2rem;
 }
 
