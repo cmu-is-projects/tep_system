@@ -66,11 +66,16 @@ h1 {
 
 /********** TABLES ********/
 table {
-  font-family: 'Roboto', sans-serif;  
+  font-family: 'Roboto', sans-serif;
 }
 
-thead {
-  font-weight: bold !important;
+table thead {
+  font-size: 1.05rem !important;
+  border-bottom: solid 0.19rem #F99C32;
+}
+
+table tbody {
+  font-size: 0.9rem !important;
 }
 
 table.striped > tbody > tr:nth-child(odd) {
