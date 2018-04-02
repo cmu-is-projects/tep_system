@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'schools', to: 'schools#index'
+  get 'schools', to: 'schools#index', as: :schools
 
-  get 'teachers', to: 'teachers#index'
+  get 'teachers', to: 'teachers#index', as: :teachers
 
   resources :orders
 

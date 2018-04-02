@@ -28,10 +28,6 @@
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/user.rb": [
-        1,
-        null
-      ],
       "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/teacher.rb": [
         1,
         1,
@@ -65,10 +61,14 @@
         2,
         2,
         2,
-        3,
+        2,
         null,
         2,
         2,
+        null
+      ],
+      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/user.rb": [
+        1,
         null
       ],
       "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/orders_controller.rb": [
@@ -183,6 +183,6 @@
         0
       ]
     },
-    "timestamp": 1522637198
+    "timestamp": 1522680878
   }
 }

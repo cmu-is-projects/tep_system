@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-01T22:46:38-04:00">2018-04-01T22:46:38-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-04-02T10:54:38-04:00">2018-04-02T10:54:38-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.52
+         1.5
        </span>
     </span> hits/line)
   </h2>
@@ -187,7 +187,7 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>7.1</td>
+        <td>7.0</td>
       </tr>
       
       <tr>
@@ -377,7 +377,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.24
+         3.2
        </span>
     </span> hits/line)
   </h2>
@@ -429,7 +429,7 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>7.1</td>
+        <td>7.0</td>
       </tr>
       
       <tr>
@@ -849,7 +849,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">    @orders = Order.enter_chronological.paginate(page: params[:page]).per_page(10)</code>
+          <code class="ruby">    @orders = Order.all #enter_chronological.paginate(page: params[:page]).per_page(10)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -1041,13 +1041,13 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">  def destroy </code>
+          <code class="ruby">def destroy </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
@@ -1096,7 +1096,7 @@
         <li class="missed" data-hits="0" data-linenumber="3">
           
           
-          <code class="ruby">  	@schools = School.all</code>
+          <code class="ruby">  	@schools = [] #School.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="4">
@@ -1145,7 +1145,7 @@
         <li class="missed" data-hits="0" data-linenumber="3">
           
           
-          <code class="ruby">  	@teachers = Teacher.all</code>
+          <code class="ruby">  	@teachers = [] #Teacher.all</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="4">
@@ -1534,8 +1534,8 @@
           <code class="ruby">  scope :shop_chronological, -&gt; { order(shopping_date: :desc ) } </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="18">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
           
           <code class="ruby">  scope :enter_chronological, -&gt; { order(date_entered: :desc ) } </code>
         </li>
