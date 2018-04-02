@@ -33,7 +33,16 @@ class OrdersController < ApplicationController
     end
   end
 
-def destroy 
-end
+  def destroy 
+  end
+
+  private
+    def set_order
+      @order = Order.find(params[:id])
+    end
+
+    def order_params
+      params.require(:order).permit(:user, :teacher, :date_entered, :shopping_date, :uploaded)
+    end
 
 end
