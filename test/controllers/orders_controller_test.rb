@@ -7,7 +7,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get orders_path
-    assert_response :success
+    assert_response :success, @response.body
   end
 
   test "should get edit" do
