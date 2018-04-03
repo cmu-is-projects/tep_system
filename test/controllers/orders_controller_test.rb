@@ -5,10 +5,10 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     @order = FactoryBot.create(:order)
   end 
 
-  # test "should get index" do
-  #   get orders_path
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get orders_path
+    assert_response :success
+  end
 
   test "should get edit" do
     get edit_order_path(@order)
