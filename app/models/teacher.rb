@@ -11,7 +11,7 @@ class Teacher < ApplicationRecord
   # self.phone = self.work_phone__c
   alias_attribute :first_name, :first_name__c
   alias_attribute :last_name, :last_name__c
-  # alias_attribute :school_id, School.find(name: primary_affiliation__c).first.id
+  alias_attribute :school_id, School.find(name: primary_affiliation__c).first.id
   alias_attribute :email, :work_email__c
   alias_attribute :phone, :work_phone__c
 
