@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'teachers', to: 'teachers#index', as: :teachers
 
   resources :orders
+  resources :items
+  resources :users
 
   root 'teachers#index'
 
