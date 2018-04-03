@@ -10,13 +10,12 @@
     <div class="row">
         <fieldset>
             <legend> Add item quantities here </legend>
-            <%=order_form.simple_fields_for :item do |item_form| %>
-                <%= item_form.input :name, label: "Item", input_html: { class: "items"}%>
-                <%= item_form.input :max_packs, label: "maximum packs", input_html: { class: "items"} %>
-                <%= item_form.input :qty_per_unit, label: "Quantity per unit" %>
-                <%= item_form.input :active, label: "Active?" %>
-               <!--  < render "item_fields", :f => task_form > -->
-          <%end%>
+            <%=order_form.simple_fields_for :order_item do |item_form| %>
+                <%= f.input :quantity, label: "Item", input_html: { class: "items"}%>
+                
+                <!-- < render "item_fields", :f => item_form > -->
+                
+            <%end%>
         </fieldset>
         
     </div>

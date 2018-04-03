@@ -6,7 +6,7 @@ class Order < ApplicationRecord
   has_many :order_items
   has_many :items, through: :order_items
   #allow orderitems to be nested within orders
-  accepts_nested_attributes_for :items, reject_if: ->(item) { item[:name].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :order_items
   #Validations
   validates_presence_of :user, :teacher, :date_entered
   validates_date :shopping_date, on_or_before: lambda { Date.current }
