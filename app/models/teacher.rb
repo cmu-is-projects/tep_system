@@ -24,6 +24,6 @@ class Teacher < ApplicationRecord
 
   private 
   def set_school_id
-    self.school_id = School.find(name: primary_affiliation__c).first.id
+    self.write_attribute(:school_id, School.find(name: primary_affiliation__c).first.id)
   end 
 end
