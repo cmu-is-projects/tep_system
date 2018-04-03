@@ -3,15 +3,18 @@
     <div class="row">
 
         <fieldset>
-            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.to_a, required: true %>
+            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.to_a, include_blank: true %>
         </fieldset>
     </div>
 
     <div class="row">
         <fieldset>
-            <legend> Add item quantities here </legend>
-            <%=order_form.simple_fields_for :order_item do |item_form| %>
-                <%= f.input :quantity, label: "Item", input_html: { class: "items"}%>
+            <legend> Add order item quantities here </legend>
+            <%=order_form.simple_fields_for :order_item do |oi_form| %>
+                <% @items.each do |f| %>
+                <%= f.label item.name%>
+
+                <%= oi_form.input :quantity, label: "Item Quantity", input_html: { class: "items"}%>
                 
                 <!-- < render "item_fields", :f => item_form > -->
                 
