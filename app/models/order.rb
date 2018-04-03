@@ -1,10 +1,12 @@
 class Order < ApplicationRecord
   
-  accepts_nested_attributes_for :order_items, reject_if: ->(order_item) { order_item[:name].blank? }, allow_destroy: true
-  #Relationships
+
   belongs_to :user
   belongs_to :teacher
-
+  has_many :order_items
+  has_many :items, through: :order_items
+  #allow orderitems to be nested within orders
+  accepts_nested_attributes_for :items, reject_if: ->(item) { item[:name].blank? }, allow_destroy: true
   #Validations
   validates_presence_of :user, :teacher, :date_entered
   validates_date :shopping_date, on_or_before: lambda { Date.current }
