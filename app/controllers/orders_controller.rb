@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
+
   def index
-    @orders = Order.all #enter_chronological.paginate(page: params[:page]).per_page(10)
+    @orders = Order.all.enter_chronological.paginate(page: params[:page]).per_page(20)
   end
 
   def edit
@@ -33,7 +35,16 @@ class OrdersController < ApplicationController
     end
   end
 
-def destroy 
-end
+  def destroy 
+  end
+
+  private
+    def set_order
+      @order = Order.find(params[:id])
+    end
+
+    def order_params
+      params.require(:order).permit(:user, :teacher, :date_entered, :shopping_date, :uploaded)
+    end
 
 end

@@ -1,8 +1,11 @@
 <nav id="nav">
+    <div class="brand-logo right">
+        <%= link_to image_tag("logo.png", alt: "logo"), '/' %>
+    </div>
   <div class="container">
-    <ul class="left hide-on-med-and-down">
-      <li><%= link_to 'Orders', orders_path %></li>
-      <li><%= link_to 'Teacher Shopping Form', new_order_path %></li>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><%= link_to 'Orders', orders_path, :class => current_class?(orders_path)%></li>
+        <li><%= link_to 'Teacher Shopping Form', new_order_path, :class => current_class?(new_order_path) %></li>
     </ul>
   </div>
 </nav>

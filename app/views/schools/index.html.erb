@@ -1,6 +1,6 @@
 <h1>Schools</h1>
 
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Name</th>
@@ -12,10 +12,11 @@
   <tbody>
     <% @schools.each do |school| %>
       <tr>
-        <td><%= school.organization_name__c %></td>
-        <td><%= school.phone__c %></td>
+        <td><%= school.name %></td>
+        <td><%= school.phone %></td>
       </tr>
     <% end %>
+    <%= will_paginate @schools %>
   </tbody>
 </table>
 
