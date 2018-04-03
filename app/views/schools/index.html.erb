@@ -1,6 +1,6 @@
 <h1>Schools</h1>
 
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Name</th>
@@ -16,6 +16,7 @@
         <td><%= school.phone %></td>
       </tr>
     <% end %>
+    <%= will_paginate @schools %>
   </tbody>
 </table>
 

@@ -1,19 +1,23 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/helpers/application_helper.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/helpers/application_helper.rb": [
+        1,
+        1,
+        6,
+        5,
+        null,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/helpers/school_helper.rb": [
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/helpers/school_helper.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/helpers/teacher_helper.rb": [
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/helpers/teacher_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/order.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/order.rb": [
         1,
         null,
         1,
@@ -37,18 +41,23 @@
         2,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/application_record.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/user.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/user.rb": [
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/teacher.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/teacher.rb": [
         1,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -61,69 +70,82 @@
         null,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/school.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/school.rb": [
         1,
         1,
         null,
         null,
         null,
         null,
-        1,
-        null
-      ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/orders_controller.rb": [
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        0,
         null,
         null,
         1,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/item.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/controllers/orders_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/item.rb": [
         1,
         1,
         null,
@@ -132,7 +154,7 @@
         2,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/models/order_item.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/models/order_item.rb": [
         1,
         null,
         1,
@@ -154,43 +176,43 @@
         null,
         null
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/channels/application_cable/channel.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/channels/application_cable/connection.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/schools_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/controllers/teachers_controller.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/controllers/schools_controller.rb": [
         0,
         0,
         0,
         0,
         0
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/jobs/application_job.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/controllers/teachers_controller.rb": [
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/Users/Stephanie/Documents/Junior Spring 2018/tep_system/app/mailers/application_mailer.rb": [
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/AlinaYu/Documentz/CMUS18/67-373/tep_system/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1522707042
+    "timestamp": 1522713517
   }
 }
