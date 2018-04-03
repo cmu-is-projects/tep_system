@@ -1,17 +1,24 @@
-<%= simple_nested_form_for(@order) do |order_form| %>
+<%= simple_nested_form_for @order,:html => { :class => 'form-horizontal' } do |order_form| %>
     <%= order_form.error_notification %>
     <div class="row">
 
-        <div class="form-inputs">
-            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.to_a, include_blank: false %>
-        </div>
+        <fieldset>
+            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.to_a, required: true %>
+        </fieldset>
     </div>
 
     <div class="row">
-        <legend> Add item quantities here </legend>
-        <%=order_form.simple_fields_for :items do |item_form| %>
-            <%= render "item_fields", :f => task_form %>
-        <%end %>
+        <fieldset>
+            <legend> Add item quantities here </legend>
+            <%=order_form.simple_fields_for :item do |item_form| %>
+                <%= item_form.input :name, label: "Item", input_html: { class: "items"}%>
+                <%= item_form.input :max_packs, label: "maximum packs", input_html: { class: "items"} %>
+                <%= item_form.input :qty_per_unit, label: "Quantity per unit" %>
+                <%= item_form.input :active, label: "Active?" %>
+               <!--  < render "item_fields", :f => task_form > -->
+          <%end%>
+        </fieldset>
+        
     </div>
     <div class="row">
         <div class="form-actions col s8">

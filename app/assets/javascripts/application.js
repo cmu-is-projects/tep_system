@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+//= require jquery_nested_form
 //= require materialize-sprockets
 //= require materialize-form
-//= require jquery_nested_form
+
