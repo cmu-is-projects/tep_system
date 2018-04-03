@@ -24,6 +24,6 @@
                 <td><%= order.date_entered %></td>
             </tr>
         <% end %>
-
+        <%= will_paginate @orders %>
     </table>
 <% end %>

@@ -64,7 +64,40 @@ h1 {
   color: #ffd600;
 }
 
+/********** PAGINATION (https://gist.github.com/amuino/172248) ********/
+
+.pagination {
+    font-size: 12px;
+    color: #4FA4D8;
+    float: right;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+.pagination a:hover {
+    background: #0078C1 none repeat scroll 0 0;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: darkgray none repeat scroll 0 0;
+    color: white;
+}
+
+.pagination .disabled {
+    color: darkgray;
+}
+
+
+
 /********** TABLES ********/
+
 table {
   font-family: 'Roboto', sans-serif;
 }
