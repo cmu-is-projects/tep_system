@@ -16,3 +16,4 @@
 //= require jquery
 //= require materialize-sprockets
 //= require materialize-form
+//= require jquery_nested_form

@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
-  accepts_nested_attributes_for :tasks, reject_if: ->(task) { task[:name].blank? }, allow_destroy: true
+  
+  accepts_nested_attributes_for :order_items, reject_if: ->(order_item) { order_item[:name].blank? }, allow_destroy: true
   #Relationships
   belongs_to :user
   belongs_to :teacher
