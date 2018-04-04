@@ -17,7 +17,8 @@ FactoryBot.define do
 
   factory :user do
     username "admin"
-    password_digest "password"
+    password "password"
+    password_confirmation "password"
     first_name "Catherine"
     last_name "Price"
     email "cat@theeducationpartnership.org"
@@ -41,4 +42,5 @@ FactoryBot.define do
     qty_per_unit 10
     active true
   end
+
 end

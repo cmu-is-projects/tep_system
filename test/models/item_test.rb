@@ -23,6 +23,8 @@ class ItemTest < ActiveSupport::TestCase
 	should_not allow_value("bad").for(:qty_per_unit)
 	should_not allow_value(1.5).for(:qty_per_unit)
 
+	should validate_uniqueness_of(:name)
+
 	context "Creating items" do 
 		setup do 
 			create_items

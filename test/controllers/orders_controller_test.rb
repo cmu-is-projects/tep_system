@@ -2,7 +2,10 @@ require 'test_helper'
 
 class OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @order = FactoryBot.create(:order)
+    @user = FactoryBot.create(:user)
+    @school = FactoryBot.create(:school)
+    @teacher = FactoryBot.create(:teacher)
+    @order = FactoryBot.create(:order, user: @user, teacher: @teacher)
   end 
 
   # test "should get index" do

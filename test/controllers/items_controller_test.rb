@@ -18,7 +18,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create item" do
     assert_difference('Item.count') do
-      post items_path, params: { item: { active: @item.active, name: @item.name, max_packs: @item.max_packs, qty_per_unit: @item.qty_per_unit } }
+      post items_path, params: { item: { active: @item.active, name: "New Item", max_packs: @item.max_packs, qty_per_unit: @item.qty_per_unit } }
     end
 
     assert_redirected_to items_path
@@ -28,11 +28,11 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
 
-  # test "should destroy owner" do
-  #   assert_difference('Owner.count', -1) do
-  #     delete owner_path(@owner)
-  #   end
+  test "should destroy item" do
+    assert_difference('Item.count', -1) do
+      delete item_path(@item)
+    end
 
-  #   assert_redirected_to owners_path
-  # end
+    assert_redirected_to items_path
+  end
 end
