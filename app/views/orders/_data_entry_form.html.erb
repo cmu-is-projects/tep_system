@@ -3,20 +3,20 @@
     <div class="row">
 
         <fieldset>
-            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.to_a, include_blank: true %>
+            <%= order_form.input :teacher_id, as: :integer, required: true %>
         </fieldset>
     </div>
 
     <div class="row">
         <fieldset>
             <legend> Add order item quantities here </legend>
-            <%=order_form.simple_fields_for :order_item do |oi_form| %>
-                <% @items.each do |f| %>
-                <%= f.label item.name%>
 
-                <%= oi_form.input :quantity, label: "Item Quantity", input_html: { class: "items"}%>
-                
-                <!-- < render "item_fields", :f => item_form > -->
+            <%=order_form.simple_fields_for :order_item do |oi_form| %>
+                <% items.each do |i| %>
+                    <%= i.name%>
+                    <%= oi_form.input :item_id, as: :hidden, value: i.id %>
+                    <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
+                <% end %>
                 
             <%end%>
         </fieldset>
@@ -28,3 +28,4 @@
         </div>
     </div>
 <% end %>
+
