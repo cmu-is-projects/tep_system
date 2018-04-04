@@ -14,5 +14,11 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery
+//= require jquery_nested_form
 //= require materialize-sprockets
 //= require materialize-form
+
+//materialize select form option
+$(document).ready(function() {
+    $('select').material_select();
+  });
