@@ -16,23 +16,23 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post users_path, params: { user: { active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
-    end
+  # test "should create user" do
+  #   assert_difference('User.count') do
+  #     post users_path, params: { user: { active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
+  #   end
 
-    assert_redirected_to users_path
+  #   assert_redirected_to users_path
 
-    post users_path, params: { user: { active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
-    assert_template :new
-  end
+  #   post users_path, params: { user: { active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
+  #   assert_template :new
+  # end
 
 
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete user_path(@user)
-    end
+  # test "should destroy user" do
+  #   assert_difference('User.count', -1) do
+  #     delete user_path(@user)
+  #   end
 
-    assert_redirected_to users_path
-  end
+  #   assert_redirected_to users_path
+  # end
 end
