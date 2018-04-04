@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.string :name
       t.integer :max_packs
       t.integer :qty_per_unit
-      t.boolean :active
+      t.boolean :active, default: true
 
       t.timestamps
     end
