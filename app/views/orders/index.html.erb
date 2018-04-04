@@ -15,14 +15,19 @@
             </tr>
         </thead>
         <% for order in @orders %>
-            <tr>
-                <td><%= link_to( order.teacher.name, order_path(order.teacher)) %></td>
-                <td><%= link_to( order.teacher.school.name, order_path(order.teacher)) %></td>
-                <td><%= order.shopping_date %></td>
-                <td><%= link_to(order.item.name, order_path(order.item)) %></td>
-                <td><%= order.quantity %></td>
-                <td><%= order.date_entered %></td>
-            </tr>
+        <tr>
+            <td><%= link_to( order.teacher.name, order_path(order.teacher)) %></td>
+            <td><%= link_to( order.teacher.school.name, order_path(order.teacher)) %></td>
+            <td><%= order.shopping_date %></td>
+            <% for order_item in Order.order_items %>
+            
+               
+                <td><%= order_item.item.name %></td>
+                <td><%= order_item.quantity %></td>
+           
+            <% end %>
+            <td><%= order.date_entered %></td>
+         </tr>
         <% end %>
         <%= will_paginate @orders %>
     </table>

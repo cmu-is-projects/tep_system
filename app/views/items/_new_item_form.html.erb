@@ -1,0 +1,16 @@
+<%= simple_form_for(@item) do |f| %>
+    <%= f.error_notification %>
+    <div class="row">
+        <div class="form-inputs">
+            <%= f.input :name, label: "Item Name" %>
+            <%= f.input :max_packs, as: :integer, label: "Maximum packs" %>
+            <%= f.input :qty_per_unit, as: :integer, label: "Quantity per unit" %>
+            <div class = "input-field"><%= f.input :active, as: :select, default: :true%></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-actions col s8">
+          <%= f.button :submit %>
+        </div>
+    </div>
+<% end %>
