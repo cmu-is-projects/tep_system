@@ -70,6 +70,7 @@ end
 gem 'chronic', '0.10.2'
 gem 'materialize-sass', '~> 1.0.0.beta'
 gem 'simple_form', '3.5.0'
+gem 'nested_form'
 gem 'materialize-form', '1.0.8'
 gem 'jquery-rails', '4.3.1'
 gem 'jquery-ui-rails', '6.0.1'
