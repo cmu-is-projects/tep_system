@@ -6,26 +6,26 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 		@item = FactoryBot.create(:item)
 	end 
 
-	 #  test "should get index" do
-  #   get items_path
-  #   assert_response :success
-  # end
+	test "should get index" do
+    get items_path
+    assert_response :success
+  end
 
-  # test "should get new" do
-  #   get new_item_path
-  #   assert_response :success
-  # end
+  test "should get new" do
+    get new_item_path
+    assert_response :success
+  end
 
-  # test "should create owner" do
-  #   assert_difference('Owner.count') do
-  #     post owners_path, params: { owner: { active: @owner.active, city: @owner.city, email: "eheimann@example.com", first_name: "Eric", last_name: @owner.last_name, phone: @owner.phone, state: @owner.state, street: @owner.street, zip: @owner.zip } }
-  #   end
+  test "should create item" do
+    assert_difference('Item.count') do
+      post items_path, params: { item: { active: @item.active, name: @item.name, max_packs: @item.max_packs, qty_per_unit: @item.qty_per_unit } }
+    end
 
-  #   assert_redirected_to owner_path(Owner.last)
+    assert_redirected_to items_path
 
-  #   post owners_path, params: { owner: { active: @owner.active, city: @owner.city, email: @owner.email, first_name: nil, last_name: @owner.last_name, phone: @owner.phone, state: @owner.state, street: @owner.street, zip: @owner.zip } }
-  #   assert_template :new
-  # end
+    post items_path, params: { item: { active: @item.active, name: nil, max_packs: @item.max_packs, qty_per_unit: @item.qty_per_unit } }
+    assert_template :new
+  end
 
 
   # test "should destroy owner" do
