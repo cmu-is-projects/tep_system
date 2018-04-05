@@ -11,12 +11,14 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @items = Item.active.all
+    order_item = @order.order_items.build
   end
 
   def show
   end
   
   def create
+    byebug
     @order = Order.new(order_params)
     if @order.save
       flash[:notice] = "Successfully added #{@order.id}."
@@ -44,7 +46,7 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:user, :teacher, :date_entered, :shopping_date, :uploaded)
+      params.require(:order).permit(:user_id, :teacher_id, :date_entered, :shopping_date, :uploaded, order_item: [:item_id, :quantity])
     end
 
 end

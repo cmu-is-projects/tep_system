@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307004708) do
+ActiveRecord::Schema.define(version: 20180404064256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180307004708) do
     t.string "name"
     t.integer "max_packs"
     t.integer "qty_per_unit"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180307004708) do
     t.bigint "user_id"
     t.bigint "teacher_id"
     t.date "shopping_date"
-    t.date "date_entered", default: "2018-04-03"
+    t.date "date_entered", default: "2018-04-04"
     t.boolean "uploaded"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20180307004708) do
     t.string "last_name"
     t.string "email"
     t.string "role"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

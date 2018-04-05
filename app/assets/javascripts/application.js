@@ -18,7 +18,11 @@
 //= require materialize-sprockets
 //= require materialize-form
 
-//materialize select form option
+materialize select form option
 $(document).ready(function() {
     $('select').material_select();
   });
+
+$(document).on('nested:fieldAdded', function(event){
+  window.materializeForm.init()
+})
