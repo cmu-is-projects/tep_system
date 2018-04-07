@@ -38,6 +38,11 @@ class OrdersController < ApplicationController
   end
 
   def destroy 
+    if @order.destroy
+      redirect_to orders_url, notice: "Successfully removed Order ##{@order.id}."
+    else
+      render action: 'show'
+    end
   end
 
   private
@@ -46,7 +51,7 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:user_id, :teacher_id, :date_entered, :shopping_date, :uploaded, order_item: [:item_id, :quantity])
+      params.require(:order).permit(:user_id, :teacher_id, :date_entered, :shopping_date, :uploaded, order_item_attributes: [:item_id, :quantity])
     end
 
 end

@@ -10,18 +10,18 @@
     </div>
 
     <div class="row">
-        <fieldset>
-            <legend> Add order item quantities here </legend>
+    <fieldset>
+        <legend> Add order item quantities here </legend>
 
-            <% @items.each do |i| %>
-                <%=order_form.simple_fields_for :order_item do |oi_form| %>
-                        <%= i.name%>
-                        <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id } %>
-                        <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
-                <%end%>
-            <% end %>
-        </fieldset>
+        <% @items.each do |i| %>
+            <%=order_form.simple_fields_for :order_item do |oi_form| %>
+                <%= i.name%>
+                <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id } %>
+                <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
+            <%end%>
+        <% end %>
         
+    </fieldset>
     </div>
     <div class="row">
         <div class="form-actions col s8">
