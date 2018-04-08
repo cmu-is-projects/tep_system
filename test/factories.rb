@@ -7,11 +7,11 @@ FactoryBot.define do
     uploaded false
   end
 
-  # factory :order_item do
-  #   association :order
-  #   association :item
-  #   quantity 5
-  # end
+  factory :order_item do
+    association :order
+    association :item
+    quantity 5
+  end
 
   #following factories used for purpose of testing order and order_items
 

@@ -10,15 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_nested_form
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-//= require jquery
-//= require jquery_nested_form
 //= require materialize-sprockets
 //= require materialize-form
 
-materialize select form option
+// @import "materialize";
+// @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
 $(document).ready(function() {
     $('select').material_select();
   });

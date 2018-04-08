@@ -27,7 +27,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Order.count') do 
       post orders_path, params: {order: {user_id: @order.user_id, teacher_id: @order.teacher_id, shopping_date: @order.shopping_date, date_entered: @order.date_entered}}
     end 
-    assert_redirected_to orders_path
+    assert_redirected_to order_path(Order.last)
 
     post orders_path, params: {order: {user_id: nil, teacher_id: @order.teacher_id, shopping_date: @order.shopping_date, date_entered: @order.date_entered}}
     assert_template :new
