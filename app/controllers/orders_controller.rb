@@ -8,21 +8,20 @@ class OrdersController < ApplicationController
   def edit
   end
 
-  def new
-    @order = Order.new
-    @items = Item.active.all
-    order_item = @order.order_items.build
-  end
+  # def new
+  #   @order = Order.new
+  #   @items = Item.active.all
+  #   order_item = @order.order_items.build
+  # end
 
   def show
   end
   
   def create
-    # byebug
     @order = Order.new(order_params)
     if @order.save
       flash[:notice] = "Successfully added #{@order.id}."
-      redirect_to @order
+      redirect_to order_path(@order)
     else
       render action: 'new'
     end

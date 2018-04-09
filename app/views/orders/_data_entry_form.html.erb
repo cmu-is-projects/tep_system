@@ -20,12 +20,14 @@
                 <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
             <%end%>
         <% end %>
+        <!-- <%= order_form.link_to_add "Add Order Item", :order_items %> -->
         
     </fieldset>
     </div>
     <div class="row">
         <div class="form-actions col s8">
             <%= order_form.button :submit %>
+            <%= link_to 'Cancel', orders_path, class: 'button alert radius' %>
         </div>
     </div>
 <% end %>

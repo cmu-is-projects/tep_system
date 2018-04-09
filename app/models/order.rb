@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   has_many :items, through: :order_items
   
   #allow orderitems to be nested within orders
-  accepts_nested_attributes_for :order_items
+  accepts_nested_attributes_for :order_items, reject_if: ->(oi) { oi[:quantity].blank? }
 
   #Validations
   validates_presence_of :user, :teacher, :date_entered
