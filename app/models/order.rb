@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  # before_validation :set_date_entered
 
   belongs_to :user
   belongs_to :teacher
@@ -25,4 +26,10 @@ class Order < ApplicationRecord
 
   scope :uploaded, -> { where(uploaded: true) }
   scope :not_uploaded, -> { where(uploaded: false) }
+
+  private 
+  # def set_date_entered 
+  #   self.date_entered = Date.current
+  #   return true
+  # end
 end

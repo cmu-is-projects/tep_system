@@ -3,7 +3,7 @@
     <div class="row">
 
         <fieldset>
-            <%= order_form.input :teacher_id, as: :integer,required: true %>
+            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true, label_html: {class: "active"} %>
             <%= order_form.input :user_id, as: :integer, required: true %>
             <%= order_form.input :shopping_date, as: :string %>
         </fieldset>
@@ -14,13 +14,13 @@
         <legend> Add order item quantities here </legend>
 
         <% @items.each do |i| %>
-            <%=order_form.simple_fields_for :order_item do |oi_form| %>
+            <%=order_form.simple_fields_for :order_items do |oi_form| %>
                 <%= i.name%>
                 <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id } %>
-                <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
+                <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs}, label_html: {class: "active"} %>
             <%end%>
         <% end %>
-        <!-- <%= order_form.link_to_add "Add Order Item", :order_items %> -->
+        <%= order_form.link_to_add "Add Order Item", :order_items %>
         
     </fieldset>
     </div>
