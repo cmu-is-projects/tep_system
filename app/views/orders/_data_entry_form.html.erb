@@ -3,28 +3,31 @@
     <div class="row">
 
         <fieldset>
-            <%= order_form.input :teacher_id, as: :integer, required: true %>
+            <%= order_form.input :teacher_id, as: :integer,required: true %>
+            <%= order_form.input :user_id, as: :integer, required: true %>
+            <%= order_form.input :shopping_date, as: :string %>
         </fieldset>
     </div>
 
     <div class="row">
-        <fieldset>
-            <legend> Add order item quantities here </legend>
+    <fieldset>
+        <legend> Add order item quantities here </legend>
 
+        <% @items.each do |i| %>
             <%=order_form.simple_fields_for :order_item do |oi_form| %>
-                <% items.each do |i| %>
-                    <%= i.name%>
-                    <%= oi_form.input :item_id, as: :hidden, value: i.id %>
-                    <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
-                <% end %>
-                
+                <%= i.name%>
+                <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id } %>
+                <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
             <%end%>
-        </fieldset>
+        <% end %>
+        <!-- <%= order_form.link_to_add "Add Order Item", :order_items %> -->
         
+    </fieldset>
     </div>
     <div class="row">
         <div class="form-actions col s8">
             <%= order_form.button :submit %>
+            <%= link_to 'Cancel', orders_path, class: 'button alert radius' %>
         </div>
     </div>
 <% end %>

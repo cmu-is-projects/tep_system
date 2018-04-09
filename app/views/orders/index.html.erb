@@ -19,7 +19,7 @@
             <td><%= link_to( order.teacher.name, order_path(order.teacher)) %></td>
             <td><%= link_to( order.teacher.school.name, order_path(order.teacher)) %></td>
             <td><%= order.shopping_date %></td>
-            <% for order_item in Order.order_items %>
+            <% for order_item in order.order_items %>
             
                
                 <td><%= order_item.item.name %></td>

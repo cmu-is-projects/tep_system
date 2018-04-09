@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :items
   resources :users
+  resources :order_items
 
   root 'teachers#index'
 
