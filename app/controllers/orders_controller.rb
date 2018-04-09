@@ -8,10 +8,11 @@ class OrdersController < ApplicationController
   def edit
   end
 
-  def new
-    @order = Order.new
-    @items = Item.active.all
-  end
+  # def new
+  #   @order = Order.new
+  #   @items = Item.active.all
+  #   order_item = @order.order_items.build
+  # end
 
   def show
   end
@@ -20,7 +21,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     if @order.save
       flash[:notice] = "Successfully added #{@order.id}."
-      redirect_to @order
+      redirect_to order_path(@order)
     else
       render action: 'new'
     end
@@ -36,6 +37,11 @@ class OrdersController < ApplicationController
   end
 
   def destroy 
+    if @order.destroy
+      redirect_to orders_url, notice: "Successfully removed Order ##{@order.id}."
+    else
+      render action: 'show'
+    end
   end
 
   private
@@ -44,7 +50,7 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:user, :teacher, :date_entered, :shopping_date, :uploaded)
+      params.require(:order).permit(:user_id, :teacher_id, :date_entered, :shopping_date, :uploaded, order_item_attributes: [:item_id, :quantity])
     end
 
 end
