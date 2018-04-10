@@ -45,6 +45,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def sync
+    @orders = Order.all.enter_chronological.not_uploaded.paginate(page: params[:page]).per_page(20)
+  end
+
   private
     def set_order
       @order = Order.find(params[:id])
