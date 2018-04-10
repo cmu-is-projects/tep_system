@@ -3,7 +3,7 @@
     <legend><%= controller.action_name.capitalize %> OrderItem</legend>
 
     <%= f.input :order_id, as: :integer %>
-    <%= f.input :item_id, as: :integer %>
+    <%= f.input :item_id, collection: Item.alphabetical.all %>
     <%= f.input :quantity, label: "Quantity", as: :integer%>
   
     <p>&nbsp;</p>
