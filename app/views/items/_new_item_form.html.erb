@@ -5,11 +5,11 @@
             <%= f.input :name, label: "Item Name" %>
             <%= f.input :max_packs, as: :integer, label: "Maximum packs" %>
             <%= f.input :qty_per_unit, as: :integer, label: "Quantity per unit" %>
-            <div class = "input-field"><%= f.input :active, as: :select, default: :true%></div>
+            <%= f.input :active%>
         </div>
     </div>
     <div class="row">
-        <div class="form-actions col s8">
+        <div class="form-actions col s8 offset-s1">
           <%= f.button :submit %>
         </div>
     </div>

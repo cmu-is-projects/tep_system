@@ -6,15 +6,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 		@user = FactoryBot.create(:user)
 	end 
 
-	test "should get index" do
-    get users_path
-    assert_response :success
-  end
+	# test "should get index" do
+ #    get users_path
+ #    assert_response :success
+ #  end
 
-  test "should get new" do
-    get new_user_path
-    assert_response :success
-  end
+ #  test "should get new" do
+ #    get new_user_path
+ #    assert_response :success
+ #  end
 
   # test "should create user" do
   #   assert_difference('User.count') do
@@ -28,11 +28,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   # end
 
 
-  # test "should destroy user" do
-  #   assert_difference('User.count', -1) do
-  #     delete user_path(@user)
-  #   end
+  test "should destroy user" do
+    assert_difference('User.count', -1) do
+      delete user_path(@user)
+    end
 
-  #   assert_redirected_to users_path
-  # end
+    assert_redirected_to users_path
+  end
 end

@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  # before_validation :set_date_entered
+  before_validation :set_dates
 
   belongs_to :user
   belongs_to :teacher
@@ -11,7 +11,7 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :order_items, reject_if: ->(oi) { oi[:quantity].blank? }
 
   #Validations
-  validates_presence_of :user, :teacher, :date_entered
+  validates_presence_of :user, :teacher
   validates_date :shopping_date, on_or_before: lambda { Date.current }, allow_blank: true
   #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable
   validates_date :date_entered, on_or_before: lambda { Date.current }
@@ -28,8 +28,14 @@ class Order < ApplicationRecord
   scope :not_uploaded, -> { where(uploaded: false) }
 
   private 
-  # def set_date_entered 
-  #   self.date_entered = Date.current
-  #   return true
-  # end
+  # set date_entered to today and shopping_date to today if not given
+  def set_dates 
+    if self.date_entered.nil?
+      self.date_entered = Date.current
+    end 
+    if self.shopping_date.nil?
+      self.shopping_date = self.date_entered
+    end
+    return true
+  end
 end
