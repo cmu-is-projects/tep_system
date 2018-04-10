@@ -10,10 +10,10 @@ class OrderItemsControllerTest < ActionDispatch::IntegrationTest
     @order_item = FactoryBot.create(:order_item, item: @item, order: @order, quantity: 1)
   end 
 
-  test "should get new" do
-    get new_order_item_path
-    assert_response :success
-  end
+  # test "should get new" do
+  #   get new_order_item_path
+  #   assert_response :success
+  # end
 
   # test "should create order item" do 
   #   assert_difference('OrderItem.count') do 

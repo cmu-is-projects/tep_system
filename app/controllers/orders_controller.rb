@@ -8,11 +8,11 @@ class OrdersController < ApplicationController
   def edit
   end
 
-  # def new
-  #   @order = Order.new
-  #   @items = Item.active.all
-  #   order_item = @order.order_items.build
-  # end
+  def new
+    @order = Order.new
+    @items = Item.active.all
+    order_item = @order.order_items.build
+  end
 
   def show
   end
@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
+      # save_order_items
       flash[:notice] = "Successfully added #{@order.id}."
       redirect_to order_path(@order)
     else
@@ -50,7 +51,17 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:user_id, :teacher_id, :date_entered, :shopping_date, :uploaded, order_item_attributes: [:item_id, :quantity])
+      params.require(:order).permit(:user_id, :teacher_id, :date_entered, :shopping_date, :uploaded, order_items_attributes: [:item_id, :quantity])
     end
+
+    # def save_order_item
+    #   # loop through order items params and save each one 
+      # ois = params[:order][:order_items_attributes]
+      # unless ois.nil?
+      #   ois.each do |oi_hash|
+      #     OrderItem.create(oi_hash)
+      #   end 
+      # end 
+    # end 
 
 end

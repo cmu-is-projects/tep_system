@@ -1,29 +1,34 @@
+<div class="container">
 <%= simple_nested_form_for @order,:html => { :class => 'form-horizontal' } do |order_form| %>
     <%= order_form.error_notification %>
     <div class="row">
-
-        <fieldset>
-            <%= order_form.input :teacher_id, as: :integer,required: true %>
-            <%= order_form.input :user_id, as: :integer, required: true %>
-            <%= order_form.input :shopping_date, as: :string %>
-        </fieldset>
+        <legend>Transaction Info</legend>
+        <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
+        <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
+        <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s4"} %>
     </div>
 
-    <div class="row">
-    <fieldset>
-        <legend> Add order item quantities here </legend>
+    <div class="row form-quantities">
+        <legend> Item Quantities </legend>
 
-        <% @items.each do |i| %>
-            <%=order_form.simple_fields_for :order_item do |oi_form| %>
-                <%= i.name%>
-                <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id } %>
-                <%= oi_form.input :quantity, as: :integer, input_html: {min: '0', max: i.max_packs} %>
-            <%end%>
+        <% unless @items.empty? then %>
+
+            <% @items.each do |i| %>
+                <%=order_form.simple_fields_for :order_items do |oi_form| %>
+                    <span class="col s10 offset-s1"><%= i.name + ":" %></span>
+                    <div class="hidden-field">
+                    <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id} %>
+                    </div>
+                    <%= oi_form.input :quantity, as: :integer, input_html: {class: "col s3 inline"} %>
+                <%end%>
+            <% end %>
+            
+        <% else %>
+            <p>There are no active items in the system at this time.</p>
         <% end %>
-        <!-- <%= order_form.link_to_add "Add Order Item", :order_items %> -->
-        
-    </fieldset>
     </div>
+    
+
     <div class="row">
         <div class="form-actions col s8">
             <%= order_form.button :submit %>
@@ -31,4 +36,5 @@
         </div>
     </div>
 <% end %>
+</div>
 
