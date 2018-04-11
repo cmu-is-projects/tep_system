@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'schools', to: 'schools#index', as: :schools
+	get '/schools/:id', to: 'schools#show'
 
   get 'teachers', to: 'teachers#index', as: :teachers
+  get '/teachers/:id', to: 'teachers#show'
 
   resources :orders
   resources :items
