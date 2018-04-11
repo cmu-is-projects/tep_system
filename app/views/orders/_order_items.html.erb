@@ -1,16 +1,19 @@
 <div class="card">
   <div class="card-content">
-    <span class="card-title">Teachers</span>
+    <span class="card-title">Order</span>
     <table class="highlight">
       <thead>
-        <th>Item Name</th>
+        <th>Order Items </th>
       </thead>
-        <% for item in @order_item %>
-          <tr>
-            <td><%= link_to order_item.item.name, teachers_path(teacher) %></td>
+        <% @order.order_items.each do |orderitem|%>
+          <tr> 
+            
+            <td><%= orderitem.item.name %></td>
+            <td><%= orderitem.quantity%></td>
+            
           </tr>
         <% end %>
-      <%= will_paginate @teachers, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
+
     </table>
   </div>
 </div>
