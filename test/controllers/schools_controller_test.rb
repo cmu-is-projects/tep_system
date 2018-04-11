@@ -9,4 +9,6 @@ class SchoolsControllerTest < ActionDispatch::IntegrationTest
 	# 	get schools_path
 	# 	assert_response :success
 	# end
+
+	# TODO: test show
 end
