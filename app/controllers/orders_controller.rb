@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   def index
-    @orders = Order.all.enter_chronological.paginate(page: params[:page]).per_page(20)
+    @orders = Order.all.uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
   end
 
   def edit
@@ -43,6 +43,19 @@ class OrdersController < ApplicationController
     else
       render action: 'show'
     end
+  end
+
+#did I write this correctly
+#SYNC TO SALESFORCE
+  def upload
+    @orders = Order.all.not_uploaded
+    @orders.each do [order]
+      unless @order.update_attribute(:uploaded, false)
+        render action: 'edit'
+      end
+    end
+    flash[:notice] = "Successfully uploaded orders to Salesforce."
+    #redirect_to @order
   end
 
   def sync

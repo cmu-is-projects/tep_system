@@ -1,0 +1,6 @@
+<h1>All Unreviewed Orders</h1>
+<% if @orders.empty? %>
+    <p>No orders to review</p>
+<% else %>
+    <%= render :partial => "order_table"%>
+<% end %>

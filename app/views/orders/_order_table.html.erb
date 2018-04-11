@@ -1,0 +1,28 @@
+<table class="highlight"> 
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>School</th>
+            <th>Shopping Date</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Semester</th>
+            <th>Date Entered</th>
+        </tr>
+    </thead>
+    <% for order in @orders %>
+        <% for order_item in order.order_items %>
+            <tr>
+                <td><%= link_to( order.teacher.name, order_path(order.teacher)) %></td>
+                <td><%= link_to( order.teacher.school.name, order_path(order.teacher)) %></td>
+                <td><%= order.shopping_date %></td>
+                <td><%= order_item.item.name %></td>
+                <td><%= order_item.quantity %></td>
+                <!-- HARD CODED SEMESTER!!! TODO: Implement semester calculation -->
+                <td>Spring 2018</td>
+                <td><%= order.date_entered %></td>
+             </tr>
+        <% end %>
+    <% end %>
+    <%= will_paginate @orders %>
+</table>
