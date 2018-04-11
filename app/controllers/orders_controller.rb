@@ -50,16 +50,12 @@ class OrdersController < ApplicationController
   def upload
     @orders = Order.all.not_uploaded
     @orders.each do [order]
-      unless @order.update_attribute(:uploaded, false)
-        render action: 'edit'
-      end
+      order.update_attribute(:uploaded, false)
     end
-    flash[:notice] = "Successfully uploaded orders to Salesforce."
-    #redirect_to @order
   end
 
   def sync
-    @orders = Order.all.enter_chronological.not_uploaded.paginate(page: params[:page]).per_page(20)
+    @orders = Order.all.not_uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
   end
 
   private

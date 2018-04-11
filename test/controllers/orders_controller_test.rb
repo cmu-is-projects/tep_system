@@ -34,14 +34,8 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end 
 
   test "should mark order as uploaded" do
-    @orders = Order.all.not_uploaded
-    @orders.each do [order]
-      unless @order.update_attribute(:uploaded, false)
-        render action: 'edit'
-      end
-    end
-    flash[:notice] = "Successfully uploaded orders to Salesforce."
-    #redirect_to @order
+    assert_difference('Order.uploaded.count')
+    
   end
 
   # test "should get show" do
