@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180404064256) do
     t.bigint "user_id"
     t.bigint "teacher_id"
     t.date "shopping_date"
-    t.date "date_entered", default: "2018-04-04"
+    t.date "date_entered"
     t.boolean "uploaded"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
