@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-content">
+    <h5>Information for order on: <%= @order.created_at.strftime(" %B %d %Y") %></h5><br />
+
+    <b>Teacher Name:&nbsp;&nbsp;</b>
+      <%= @order.teacher.name %><br /><br />
+    <b>School Name:&nbsp;&nbsp;</b>
+      <%= @order.teacher.school.name %><br /><br />
+  </div>
+</div>

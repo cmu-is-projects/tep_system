@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Order</span>
+    <table class="highlight">
+      <thead>
+        <th>Order Items </th>
+      </thead>
+        <% @order.order_items.each do |orderitem|%>
+          <tr> 
+            
+            <td><%= orderitem.item.name %></td>
+            <td><%= orderitem.quantity%></td>
+            
+          </tr>
+        <% end %>
+
+    </table>
+  </div>
+</div>
