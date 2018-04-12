@@ -1,9 +1,11 @@
 <div class="card">
-<div class="card-content">
-<h1>All Teacher Orders</h1>
-<% if @orders.empty? %>
-    <p>No orders in the system right now :(</p>
-<% else %>
-    <%= render :partial => "order_table"%>
-<% end %>
+    <div class="card-content">
+        <h1>All Teacher Orders</h1>
+        <% if @orders.empty? %>
+            <p>No orders in the system right now :(</p>
+        <% else %>
+            <%= render :partial => "order_table"%>
+        <% end %>
+    </div>
+</div>
 
