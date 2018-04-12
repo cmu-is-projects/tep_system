@@ -7,6 +7,7 @@
     <table class="highlight"> 
         <thead>
             <tr>
+                <th></th>
                 <th>Name</th>
                 <th>School</th>
                 <th>Shopping Date</th>
@@ -19,6 +20,7 @@
         <% for order in @orders %>
             <% for order_item in order.order_items %>
         <tr>
+            <td><i class="material-icons"><%= link_to('search', order_path(order))%></i></td>
             <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
             <td><%= link_to( order.teacher.school.name, school_path(order.teacher.school)) %></td>
             <td><%= order.shopping_date %></td>
@@ -30,7 +32,7 @@
          </tr>
          <% end %>
         <% end %>
-        <%= will_paginate @orders %>
+        <%= will_paginate @orders, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
     </table>
 <% end %>
 </div>
