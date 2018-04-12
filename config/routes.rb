@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'schools', to: 'schools#index', as: :schools
-	get '/schools/:id', to: 'schools#show'
+	get 'schools/:id', to: 'schools#show', as: :school
 
   get 'teachers', to: 'teachers#index', as: :teachers
-  get '/teachers/:id', to: 'teachers#show'
+  get 'teachers/:id', to: 'teachers#show', as: :teacher
 
   resources :orders
   resources :items
@@ -13,9 +13,8 @@ Rails.application.routes.draw do
   root 'teachers#index'
 
   # custom paths
-  get '/sync/', to: 'orders#sync', as: 'sync'
+  get 'sync', to: 'orders#sync', as: 'sync'
   patch 'upload', to: 'orders#upload', as: 'upload'
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
