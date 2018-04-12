@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">Recent Orders</span>
+    <table class="highlight">
+      <thead>
+        <th>Shopping Date</th>
+        <th>Entered On</th>
+      </thead>
+        <% for order in @recent_orders %>
+          <tr>
+            <td><%= link_to order.shopping_date.strftime("%m/%d/%y"), order_path(order) %></td>
+            <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
+          </tr>
+        <% end %>
+    </table>
+  </div>
+</div>

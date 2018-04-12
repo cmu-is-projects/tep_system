@@ -1,10 +1,18 @@
 <div class="card">
   <div class="card-content">
-    <h5>Information for order on: <%= @order.created_at.strftime(" %B %d %Y") %></h5><br />
+    <h5>Order on: <%= @order.created_at.strftime(" %B %d %Y") %></h5><br />
 
-    <b>Teacher Name:&nbsp;&nbsp;</b>
-      <%= @order.teacher.name %><br /><br />
-    <b>School Name:&nbsp;&nbsp;</b>
-      <%= @order.teacher.school.name %><br /><br />
+    <b>Teacher:&nbsp;&nbsp;</b>
+      <%= link_to @order.teacher.name, teacher_path(@order.teacher) %><br />
+    <b>School:&nbsp;&nbsp;</b>
+      <%= link_to @order.teacher.school.name, school_path(@order.teacher.school) %><br />
+    <b>Shopped on:&nbsp;&nbsp;</b>
+      <%= @order.shopping_date.strftime("%m/%d/%y") %><br />
+    <b>Entered on:&nbsp;&nbsp;</b>
+      <%= @order.date_entered.strftime("%m/%d/%y") %><br />
+    <b>Entered by:&nbsp;&nbsp;</b>
+      <%= @order.user.name %><br />
+    <b>Uploaded to Salesforce?:&nbsp;&nbsp;</b>
+      <%= @order.uploaded ? "Yes" : "No" %><br />
   </div>
 </div>

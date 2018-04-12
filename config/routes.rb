@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'schools', to: 'schools#index', as: :schools
-	get 'school/:id', to: 'schools#show'
+	get 'schools/:id', to: 'schools#show', as: :school
 
   get 'teachers', to: 'teachers#index', as: :teachers
-  get 'teacher/:id', to: 'teachers#show'
+  get 'teachers/:id', to: 'teachers#show', as: :teacher
 
   resources :orders
   resources :items

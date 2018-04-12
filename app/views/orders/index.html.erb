@@ -19,8 +19,8 @@
         <% for order in @orders %>
             <% for order_item in order.order_items %>
         <tr>
-            <td><%= link_to( order.teacher.name, order_path(order.teacher)) %></td>
-            <td><%= link_to( order.teacher.school.name, order_path(order.teacher)) %></td>
+            <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
+            <td><%= link_to( order.teacher.school.name, school_path(order.teacher.school)) %></td>
             <td><%= order.shopping_date %></td>
             <td><%= order_item.item.name %></td>
             <td><%= order_item.quantity %></td>

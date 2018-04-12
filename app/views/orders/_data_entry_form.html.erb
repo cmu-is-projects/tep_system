@@ -1,18 +1,19 @@
-<h1 class="col s10 offset-s1">Add Order</h1> 
+<div class="form-wrapper">
+<h1>Add Order</h1> 
 <%= simple_nested_form_for @order,:html => { :class => 'form-horizontal' } do |order_form| %>
     <%= order_form.error_notification %>
     <div class="row">
-        <legend class="col s10 offset-s1">Transaction Info</legend>
+        <legend>Transaction Info</legend>
         <div class="container">
         <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
         <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
-        <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s4"} %>
+        <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
         </div>
     </div>
 
     <div class="row form-quantities">
-        <legend class="col s10 offset-s1"> Item Quantities </legend>
-        <div class="container"
+        <legend> Item Quantities </legend>
+        <div class="container">
 
         <% unless @items.empty? then %>
 
@@ -40,3 +41,4 @@
         </div>
     </div>
 <% end %>
+</div>
