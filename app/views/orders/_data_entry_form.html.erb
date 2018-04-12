@@ -1,15 +1,19 @@
-<div class="container">
+<div class="form-wrapper">
+<h1>Add Order</h1> 
 <%= simple_nested_form_for @order,:html => { :class => 'form-horizontal' } do |order_form| %>
     <%= order_form.error_notification %>
     <div class="row">
         <legend>Transaction Info</legend>
+        <div class="container">
         <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
         <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
-        <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s4"} %>
+        <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
+        </div>
     </div>
 
     <div class="row form-quantities">
         <legend> Item Quantities </legend>
+        <div class="container">
 
         <% unless @items.empty? then %>
 
@@ -26,6 +30,7 @@
         <% else %>
             <p>There are no active items in the system at this time.</p>
         <% end %>
+        </div>
     </div>
     
 
@@ -37,4 +42,3 @@
     </div>
 <% end %>
 </div>
-

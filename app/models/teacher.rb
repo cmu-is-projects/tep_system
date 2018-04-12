@@ -1,5 +1,6 @@
 class Teacher < ApplicationRecord
-  belongs_to :school  
+  belongs_to :school 
+  has_many :orders 
   # before_create :set_school_id
 
   # this item is synced to Salesforce teachers using Heroku Connect
