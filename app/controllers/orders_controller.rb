@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
 
   def destroy 
     if @order.destroy
-      redirect_to orders_url, notice: "Successfully removed Order ##{@order.id}."
+      redirect_to orders_url, notice: "Successfully removed Order #{@order.id}."
     else
       render action: 'show'
     end
@@ -48,10 +48,11 @@ class OrdersController < ApplicationController
 #did I write this correctly
 #SYNC TO SALESFORCE
   def upload
-    @orders = Order.all.not_uploaded
-    @orders.each do [order]
-      order.update_attribute(:uploaded, false)
-    end
+    @orders = Order.all.not_uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
+    Order.not_uploaded.update_all(:uploaded => true)
+    flash[:notice] = "Successfully uploaded data to Salesforce."
+    
+    render action: 'sync'
   end
 
   def sync

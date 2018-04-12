@@ -2,5 +2,6 @@
 <% if @orders.empty? %>
     <p>No orders to review</p>
 <% else %>
+    <%= link_to( "Upload to Salesforce", upload_path(@orders), :method => :patch) %>
     <%= render :partial => "order_table"%>
 <% end %>

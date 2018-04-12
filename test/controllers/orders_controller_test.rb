@@ -35,7 +35,6 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should mark order as uploaded" do
     assert_difference('Order.uploaded.count')
-    
   end
 
   # test "should get show" do

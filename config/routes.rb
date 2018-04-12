@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   # custom paths
   get '/sync/', to: 'orders#sync', as: 'sync'
-  patch '/upload/' to: "orders#upload", :as => 'upload'
+  patch '/upload', to: 'orders#upload', as: 'upload'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
