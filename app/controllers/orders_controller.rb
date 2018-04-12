@@ -45,14 +45,11 @@ class OrdersController < ApplicationController
     end
   end
 
-#did I write this correctly
-#SYNC TO SALESFORCE
   def upload
-    @orders = Order.all.not_uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
-    Order.not_uploaded.update_all(:uploaded => true)
-    flash[:notice] = "Successfully uploaded data to Salesforce."
-    
-    render action: 'sync'
+    if Order.set_uploaded
+      flash[:notice] = "Successfully uploaded data to Salesforce."
+    end
+    redirect_to sync_path
   end
 
   def sync
