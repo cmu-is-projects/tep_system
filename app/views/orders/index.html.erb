@@ -23,12 +23,12 @@
             <td><i class="material-icons"><%= link_to('search', order_path(order))%></i></td>
             <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
             <td><%= link_to( order.teacher.school.name, school_path(order.teacher.school)) %></td>
-            <td><%= order.shopping_date %></td>
+            <td><%= order.shopping_date.strftime("%m/%d/%y") %></td>
             <td><%= order_item.item.name %></td>
             <td><%= order_item.quantity %></td>
             <!-- HARD CODED SEMESTER!!! TODO: Implement semester calculation -->
             <td>Spring 2018</td>
-            <td><%= order.date_entered %></td>
+            <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
          </tr>
          <% end %>
         <% end %>
