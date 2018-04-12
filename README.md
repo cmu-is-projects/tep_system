@@ -1,5 +1,6 @@
-# README
+# DataCat 
 
-Stephanie made a change
-Shirley made a change 
-Alina made a change
+If default user is not showing locally, run: 
+```
+bundle exec rake db:migrate:redo
+```
