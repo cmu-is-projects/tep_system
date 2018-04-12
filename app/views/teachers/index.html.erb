@@ -17,9 +17,9 @@
   <tbody>
     <% @teachers.each do |teacher| %>
       <tr>
-        <td><%= teacher.first_name %></td>
-        <td><%= teacher.last_name %></td>
-        <td><%= teacher.school.name %></td>
+        <td><%= link_to teacher.first_name, teacher_path(teacher) %></td>
+        <td><%= link_to teacher.last_name, teacher_path(teacher) %></td>
+        <td><%= link_to teacher.school.name, school_path(teacher.school) %></td>
         <td><%= teacher.email %></td>
         <td><%= teacher.phone %></td>
       </tr>
