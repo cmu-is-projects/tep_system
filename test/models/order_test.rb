@@ -95,6 +95,11 @@ class OrderTest < ActiveSupport::TestCase
       assert_equal 2, Order.not_uploaded.all.count
     end
 
+    should "should set all unuploaded orders to uploaded" do
+      Order.set_uploaded
+      assert_equal 3, Order.uploaded.all.count
+    end
+
   end
 
 end
