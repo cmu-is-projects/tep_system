@@ -6,15 +6,15 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 		@item = FactoryBot.create(:item)
 	end 
 
-	# test "should get index" do
- #    get items_path
- #    assert_response :success
- #  end
+	test "should get index" do
+    get items_path
+    assert_response :success
+  end
 
- #  test "should get new" do
- #    get new_item_path
- #    assert_response :success
- #  end
+  test "should get new" do
+    get new_item_path
+    assert_response :success
+  end
 
   test "should create item" do
     assert_difference('Item.count') do

@@ -6,22 +6,24 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     @school = FactoryBot.create(:school)
     @teacher = FactoryBot.create(:teacher, school: @school)
     @order = FactoryBot.create(:order, user: @user, teacher: @teacher)
+    @order2 = FactoryBot.create(:order, user: @user, teacher: @teacher)
+    @orders = Order.all
   end 
 
-  # test "should get index" do
-  #   get orders_path
-  #   assert_response :success
-  # end
+  test "should get index" do
+    get orders_path
+    assert_response :success
+  end
 
-  # test "should get edit" do
-  #   get edit_order_path(@order)
-  #   assert_response :success
-  # end
+  test "should get edit" do
+    get edit_order_path(@order)
+    assert_response :success
+  end
 
-  # test "should get new" do
-  #   get new_order_path
-  #   assert_response :success
-  # end
+  test "should get new" do
+    get new_order_path
+    assert_response :success
+  end
 
   test "should create order" do 
     assert_difference('Order.count') do 
@@ -33,10 +35,16 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_template :new
   end 
 
-  # test "should get show" do
-  #   get order_path(@order)
-  #   assert_response :success
-  # end
+
+  test "should mark order as uploaded" do
+    patch upload_path(@orders)
+    assert_redirected_to sync_path
+  end
+
+  test "should get show" do
+    get order_path(@order)
+    assert_response :success
+  end
 
   test "should destroy order" do
     assert_difference('Order.count', -1) do 

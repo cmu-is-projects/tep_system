@@ -39,14 +39,21 @@ class OrdersController < ApplicationController
 
   def destroy 
     if @order.destroy
-      redirect_to orders_url, notice: "Successfully removed Order ##{@order.id}."
+      redirect_to orders_url, notice: "Successfully removed Order #{@order.id}."
     else
       render action: 'show'
     end
   end
 
+  def upload
+    if Order.set_uploaded
+      flash[:notice] = "Successfully uploaded data to Salesforce."
+    end
+    redirect_to sync_path
+  end
+
   def sync
-    @orders = Order.all.enter_chronological.not_uploaded.paginate(page: params[:page]).per_page(20)
+    @orders = Order.all.not_uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
   end
 
   private
