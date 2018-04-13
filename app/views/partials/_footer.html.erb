@@ -1,0 +1,25 @@
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5>DataCat</h5>
+        <p>We cat your data. We cat your data. We cat your data. We cat your data. We cat your data.</p>
+
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <p> Links to Other Pages</p>
+        <ul>
+          <li><%= link_to 'Teachers', teachers_path, :class => current_class?(teachers_path) %></li>
+          <li><%= link_to 'Schools', schools_path, :class => current_class?(schools_path) %></li>
+          <li><%= link_to 'Users', users_path, :class => current_class?(users_path) %></li>
+          <li><%= link_to 'Items', items_path, :class => current_class?(items_path) %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="black-text container">
+    © 2017 DataCat
+    </div>
+  </div>
+</footer>

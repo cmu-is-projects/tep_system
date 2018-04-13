@@ -51,18 +51,26 @@ h1 {
 
 /********** FOOTER ********/
 
-#footer {
-  background-color: black;
+footer.page-footer {
+  font-size: 1.2 rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffd394;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 0px;
-  color: yellow;
+  color: #383838;
   line-height: 2rem;
 }
 
-#footer a {
-  color: #ffd600;
+footer ul a{
+  color: #383838;
+  border-bottom: none !important;
 }
+footer.footer-copyright.container {
+  color: black;
+  /*background-color: #ffa82e;*/
+}
+
 
 /********** PAGINATION (https://gist.github.com/amuino/172248) ********/
 
