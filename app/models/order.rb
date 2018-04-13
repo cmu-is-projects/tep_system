@@ -27,6 +27,11 @@ class Order < ApplicationRecord
   scope :uploaded, -> { where(uploaded: true) }
   scope :not_uploaded, -> { where(uploaded: false) }
 
+  #Methods
+  def self.set_uploaded
+    self.not_uploaded.update_all(:uploaded => true)
+  end
+
   private 
   # set date_entered to today and shopping_date to today if not given
   def set_dates 
