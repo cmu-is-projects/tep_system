@@ -5,7 +5,6 @@
     <%= render partial: "#{primary}" %>
     <!-- sometimes we want another partial below -->
     <% unless secondary.nil? %>
-      <p>&nbsp;</p>
       <%= render partial: "#{secondary}" %>
     <% end %>
   </div>

@@ -9,6 +9,7 @@
             <th>Quantity</th>
             <th>Semester</th>
             <th>Date Entered</th>
+            <th>Uploaded</th>
         </tr>
     </thead>
     <% for order in @orders %>
@@ -23,6 +24,7 @@
         <!-- HARD CODED SEMESTER!!! TODO: Implement semester calculation -->
         <td>Spring 2018</td>
         <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
+        <td><%= order.uploaded %></td>
      </tr>
      <% end %>
     <% end %>
