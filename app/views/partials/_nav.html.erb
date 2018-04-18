@@ -1,13 +1,14 @@
 <nav id="nav">
-    <div class="brand-logo right">
+    <div class="brand-logo left">
         <%= link_to image_tag("tep_logo4.png", alt: "logo"), '/' %>
     </div>
   <div class="container">
-    <ul id="nav-mobile" class="left hide-on-med-and-down">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to 'Checkout', new_order_path, :class => current_class?(new_order_path) %></li>
         <li><%= link_to 'Orders', orders_path, :class => current_class?(orders_path)%></li>
         <li><%= link_to 'Items', items_path, :class => current_class?(items_path) %></li>
         <li><%= link_to 'Sync to Salesforce', sync_path, :class => current_class?(sync_path) %></li>
+        <li><%= link_to 'Login' %></li>
     </ul>
   </div>
 </nav>
