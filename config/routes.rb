@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :order_items
 
-  root 'teachers#index'
+  root 'home#index'
 
   # custom paths
   get 'sync', to: 'orders#sync', as: 'sync'
