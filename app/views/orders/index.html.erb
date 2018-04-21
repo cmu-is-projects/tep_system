@@ -4,6 +4,7 @@
         <% if @orders.empty? %>
             <p>No orders in the system right now :(</p>
         <% else %>
+            <%= link_to 'Download orders CSV', orders_path(format: :csv) %>
             <%= render :partial => "order_table"%>
         <% end %>
     </div>
