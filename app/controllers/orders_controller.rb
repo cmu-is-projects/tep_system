@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
+    @order_items = @order.order_items
   end
 
   def new

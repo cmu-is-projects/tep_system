@@ -1,0 +1,34 @@
+<div class="form-wrapper">
+<h1>Edit Order</h1> 
+  <%= simple_nested_form_for @order, :html => { :class => 'form-horizontal' } do |order_form| %>
+    
+      
+
+      <div class="row">
+        <h5>Transaction Info</h5>
+          <div class="container">
+              <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
+              <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
+              <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
+              <%= order_form.input :uploaded, as: :hidden, input_html: { value: false } %>
+              
+              
+              <%=order_form.simple_fields_for :order_items do |oi_form| %>
+                    <%= oi_form.input :item_id, collection: Item.alphabetical.all %>
+                    <%= oi_form.input :quantity, as: :integer %>
+              <% end %>
+            
+          </div>
+      </div>
+      
+      
+
+    <div class="row">
+
+    <div class="form-actions col s8">
+        <%= order_form.submit nil, :class => 'button radius' %>
+        <%= link_to 'Cancel', orders_path, :class => 'button alert radius' %>
+      </div>
+    </div>
+  <% end %>
+</div>
