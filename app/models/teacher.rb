@@ -10,14 +10,15 @@ class Teacher < ApplicationRecord
   # self.school_id = School.find(name: self.primary_affiliation__c).first.id
   # self.email = self.work_email__c
   # self.phone = self.work_phone__c
-  # alias_attribute :first_name, :first_name__c
-  # alias_attribute :last_name, :last_name__c
-  # alias_attribute :school_id, School.find(name: :primary_affiliation__c).first.id
-  # alias_attribute :email, :work_email__c
-  # alias_attribute :phone, :work_phone__c
+
 
   self.table_name = "salesforce.contact"
   self.primary_key = "sfid"
+  alias_attribute :first_name, :firstname
+  alias_attribute :last_name, :lastname
+  alias_attribute :school_id, :accountid
+  # alias_attribute :email, :email
+  # alias_attribute :phone, :phone
 
   scope :alphabetical, ->{order(:last_name, :first_name)}
   scope :for_school, ->(school_sfid){where(XXX: school_sfid)}
