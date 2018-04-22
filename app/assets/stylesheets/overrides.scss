@@ -16,6 +16,7 @@ html {
 }
 
 #nav ul a {
+  text-align: right;
   color: #4F4F4F;
   font-size: 1.2rem;
 }
@@ -40,6 +41,12 @@ html {
   background-color: #FCC;
   border: solid 1px #C66;
   color: #800000;
+}
+
+#username {
+  color: #4F4F4F;
+  font-size: 1.2rem;
+  padding-right: 10px;
 }
 
 /********** BODY ********/
