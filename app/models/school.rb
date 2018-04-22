@@ -13,8 +13,8 @@ class School < ApplicationRecord
 	  # and :after_destroy callbacks or any dependent association options.
 	  # self.table_name = "salesforce.account"
 	  
-	  alias_attribute :org_type, :type
-	  School.where(org_type: "School").delete_all
+	  # alias_attribute :org_type, :type
+	  # School.where(org_type: "School").delete_all
 	  # School.select{|data| data.type != "School"}.delete_all
   end
 	
