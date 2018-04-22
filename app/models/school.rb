@@ -16,8 +16,6 @@ class School < ApplicationRecord
 	  # alias_attribute :org_type, :type
 	  # School.where(org_type: "School").delete_all
 	  # School.select{|data| data.type != "School"}.delete_all
-
-	  alias_attribute :
   end
 	
   # other option is simply to create a scope that has to be called each time, e.g.,
