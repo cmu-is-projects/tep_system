@@ -26,7 +26,7 @@ class Teacher < ApplicationRecord
 
   private 
 
-  def delete_non_teachers
+  def self.delete_non_teachers
     if Teacher.column_names.include? "title" then 
       Teacher.where("title NOT ILIKE ?", "%teacher%").delete_all
     end 
