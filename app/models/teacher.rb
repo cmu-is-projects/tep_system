@@ -13,7 +13,7 @@ class Teacher < ApplicationRecord
   # alias_attribute :phone, :phone
 
   # filter contacts for teachers 
-  delete_non_teachers
+  Teacher.delete_non_teachers
   ##############################################
 
 
