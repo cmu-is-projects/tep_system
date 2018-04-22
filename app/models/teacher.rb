@@ -1,8 +1,8 @@
 class Teacher < ApplicationRecord
   belongs_to :school, foreign_key: :accountid
   has_many :orders 
-  # before_create :set_school_id
 
+  ####### COMMENT OUT IF RUNNING LOCALLY #######
   # this item is synced to Salesforce teachers using Heroku Connect
   self.table_name = "salesforce.contact"
   self.primary_key = "sfid"
@@ -12,6 +12,11 @@ class Teacher < ApplicationRecord
   # alias_attribute :email, :email
   # alias_attribute :phone, :phone
 
+  # filter contacts for teachers 
+  delete_non_teachers
+  ##############################################
+
+
   scope :alphabetical, ->{order(:last_name, :first_name)}
   scope :for_school, ->(school_sfid){where(XXX: school_sfid)}
 
@@ -20,7 +25,11 @@ class Teacher < ApplicationRecord
   end
 
   private 
-  def set_school_id
-    self.write_attribute(:school_id, School.find(name: primary_affiliation__c).first.id)
-  end 
+
+  def delete_non_teachers
+    if Teacher.column_names.include? "title" then 
+      Teacher.where("title NOT ILIKE ?", "%teacher%").delete_all
+    end 
+  end
+
 end
