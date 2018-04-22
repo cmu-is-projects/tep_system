@@ -4,14 +4,6 @@ class Teacher < ApplicationRecord
   # before_create :set_school_id
 
   # this item is synced to Salesforce teachers using Heroku Connect
-  # self.table_name = "salesforce.teacher__c"
-  # self.first_name = self.first_name__c
-  # self.last_name = self.last_name__c 
-  # self.school_id = School.find(name: self.primary_affiliation__c).first.id
-  # self.email = self.work_email__c
-  # self.phone = self.work_phone__c
-
-
   self.table_name = "salesforce.contact"
   self.primary_key = "sfid"
   alias_attribute :first_name, :firstname
