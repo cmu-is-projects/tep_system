@@ -12,7 +12,8 @@ class School < ApplicationRecord
 	  # delete and delete_all which won't enforce :before_destroy 
 	  # and :after_destroy callbacks or any dependent association options.
 	  # self.table_name = "salesforce.account"
-	  School.where(type: "School").delete_all
+	  # School.where(type: "School").delete_all
+	  School.select{|data| data.type != "School"}.delete_all
   end
 	
   # other option is simply to create a scope that has to be called each time, e.g.,
