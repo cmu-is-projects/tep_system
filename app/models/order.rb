@@ -10,6 +10,20 @@ class Order < ApplicationRecord
   #allow orderitems to be nested within orders
   accepts_nested_attributes_for :order_items, reject_if: ->(oi) { oi[:quantity].blank? }
 
+  # ####### COMMENT OUT IF RUNNING LOCALLY #######
+  # # this item is synced to Salesforce POS Transactions using Heroku Connect
+  # self.table_name = "salesforce.contact"
+  # self.primary_key = "sfid"
+  # alias_attribute :first_name, :firstname
+  # alias_attribute :last_name, :lastname
+  # alias_attribute :school_id, :accountid
+  # # alias_attribute :email, :email
+  # # alias_attribute :phone, :phone
+
+  # # filter POS Transactions for Incoming POS Transactions 
+  # Teacher.where("title NOT ILIKE ? OR title IS NULL", "%teacher%").delete_all
+  # ##############################################
+
   #Validations
   validates_presence_of :user, :teacher
   validates_date :shopping_date, on_or_before: lambda { Date.current }, allow_blank: true
