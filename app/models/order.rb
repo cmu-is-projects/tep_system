@@ -31,6 +31,18 @@ class Order < ApplicationRecord
   def self.set_uploaded
     self.not_uploaded.update_all(:uploaded => true)
   end
+  
+  # def self.to_csv
+  #   attributes = %w{teacher_id  shopping_date uploaded}
+
+  #   CSV.generate(headers: true) do |csv|
+  #     csv << attributes
+
+  #     all.each do |order|
+  #       csv << attributes.map{ |attr| order.send(attr) }
+  #     end
+  #   end
+  # end
 
   private 
   # set date_entered to today and shopping_date to today if not given

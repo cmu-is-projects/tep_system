@@ -3,9 +3,18 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all.enter_chronological.paginate(page: params[:page]).per_page(20)
+    respond_to do |format|
+      format.html
+      format.csv do #{  filename: "orders-#{Date.today}.csv" }
+        headers['Content-Disposition'] = "attachment; filename=\"orders-#{Date.today}.csv\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
+    
   end
 
   def edit
+    @order_items = @order.order_items
   end
 
   def new
