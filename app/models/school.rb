@@ -11,17 +11,18 @@ class School < ApplicationRecord
 	  # we only want schools 
 	  # delete and delete_all which won't enforce :before_destroy 
 	  # and :after_destroy callbacks or any dependent association options.
+	  self.table_name = "salesforce.account"
 	  School.where(type: "School").delete_all
   end
 	
   # other option is simply to create a scope that has to be called each time, e.g.,
-  def self.all_schools
-	  self = self.where(type: "School")
-  end
+  # def self.all_schools
+	 #  self = self.where(type: "School")
+  # end
 
 	# this item is synced to Salesforce schools using Heroku Connect
-	self.table_name = "salesforce.account"
-	self = self.where(type: "School")
+	# self.table_name = "salesforce.account"
+	# self = self.where(type: "School")
 	# self.name = self.organization_name__c
 	# self.phone = self.phone__c
 
