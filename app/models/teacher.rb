@@ -13,7 +13,7 @@ class Teacher < ApplicationRecord
   # alias_attribute :phone, :phone
 
   # filter contacts for teachers 
-  Teacher.where("title NOT ILIKE ?", "%teacher%").delete_all
+  Teacher.where("title NOT ILIKE ? OR title IS NULL", "%teacher%").delete_all
   ##############################################
 
 
@@ -28,7 +28,7 @@ class Teacher < ApplicationRecord
 
   def self.delete_non_teachers
     if Teacher.column_names.include? "title" then 
-      Teacher.where("title NOT ILIKE ?", "%teacher%").delete_all
+      Teacher.where("title NOT ILIKE ? OR title IS NULL", "%teacher%").delete_all
     end 
   end
 
