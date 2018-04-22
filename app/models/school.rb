@@ -11,7 +11,7 @@ class School < ApplicationRecord
 	  # we only want schools 
 	  # delete and delete_all which won't enforce :before_destroy 
 	  # and :after_destroy callbacks or any dependent association options.
-	  self.table_name = "salesforce.account"
+	  # self.table_name = "salesforce.account"
 	  
 	  # alias_attribute :org_type, :type
 	  # School.where(org_type: "School").delete_all
@@ -24,7 +24,8 @@ class School < ApplicationRecord
   # end
 
 	# this item is synced to Salesforce schools using Heroku Connect
-	# self.table_name = "salesforce.account"
+	self.table_name = "salesforce.account"
+	self.primary_key = "sfid"
 	# self = self.where(type: "School")
 	# self.name = self.organization_name__c
 	# self.phone = self.phone__c

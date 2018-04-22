@@ -1,5 +1,5 @@
 class Teacher < ApplicationRecord
-  belongs_to :school 
+  belongs_to :school, foreign_key: :accountid
   has_many :orders 
   # before_create :set_school_id
 
@@ -15,6 +15,9 @@ class Teacher < ApplicationRecord
   # alias_attribute :school_id, School.find(name: :primary_affiliation__c).first.id
   # alias_attribute :email, :work_email__c
   # alias_attribute :phone, :work_phone__c
+
+  self.table_name = "salesforce.contact"
+  self.primary_key = "sfid"
 
   scope :alphabetical, ->{order(:last_name, :first_name)}
   scope :for_school, ->(school_sfid){where(XXX: school_sfid)}
