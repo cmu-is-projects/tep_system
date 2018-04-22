@@ -8,6 +8,9 @@
     <b>School:&nbsp;&nbsp;</b>
       <%= link_to @teacher.school.name, school_path(@teacher.school) %><br />
 
+    <b>Title:&nbsp;&nbsp;</b>
+    <%= @teacher.has_attribute? :title ? @teacher.title : ""%><br />
+
     <b>Email:&nbsp;&nbsp;</b>
       <%= @teacher.email %><br />
 
