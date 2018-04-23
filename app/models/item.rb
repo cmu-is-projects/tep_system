@@ -5,7 +5,7 @@ class Item < ApplicationRecord
 	belongs_to :product_master, foreign_key: "product_master__c"
 
   # this item is synced to Salesforce POS Transactions using Heroku Connect
-  self.table_name = "salesforce.pos_transaction__c"
+  self.table_name = "salesforce.pos_transactions__c"
   self.primary_key = "name" # POS Transaction ID 
   alias_attribute :qty_per_unit, :qty_per_unit__c
 
