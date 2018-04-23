@@ -6,7 +6,7 @@ class Item < ApplicationRecord
 
   # this item is synced to Salesforce POS Transactions using Heroku Connect
   self.table_name = "items_view"
-  self.primary_key = "sfid" # POS Transaction ID 
+  # self.primary_key = "sfid" # POS Transaction ID 
   # alias_attribute :qty_per_unit, :qty_per_unit__c
 
   # def product_name

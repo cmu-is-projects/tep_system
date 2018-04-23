@@ -22,7 +22,7 @@
                 <%=order_form.simple_fields_for :order_items do |oi_form| %>
                     <span class="col s10 offset-s1"><%= i.name + ":" %></span>
                     <div class="hidden-field">
-                    <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.sfid} %>
+                    <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.id} %>
                     </div>
                     <%= oi_form.input :quantity, as: :integer, input_html: {class: "col s3 inline"} %>
                 <%end%>
