@@ -7,7 +7,7 @@ class CreateTeachersView < ActiveRecord::Migration[5.1]
     						 accountid as school_sfid, middle_name__c as middle_name, 
     						 phone, email, title
     			  FROM salesforce.contact
-    			 WHERE title ILIKE %teacher%; 
+    			 WHERE title ILIKE '%teacher%'; 
 		  SQL
 		end
   end
