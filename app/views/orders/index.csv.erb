@@ -1,7 +1,7 @@
-<% headers = ['Shopping date', 'Last Name', 'First Name', 'Item Name', 'Quantity'] %>
+<% headers = ['Last Name', 'First Name', 'Product Name', 'Units distributed', 'Date distributed', 'Record Type ID', 'Related Outgoing POS', 'Incoming POS Contact'] %>
 <%= CSV.generate_line headers %>
 <% for order in @orders %>
     <% for order_item in order.order_items %>
-        <%= CSV.generate_line([order.shopping_date, order.teacher.last_name, order.teacher.first_name, order_item.item.name, order_item.quantity])%>
+        <%= CSV.generate_line([order.teacher.last_name, order.teacher.first_name, order_item.item.name, order_item.quantity*order_item.item.qty_per_unit, order.shopping_date, '012E0000000Mzwe', 0, 0])%>
     <% end %>
 <% end %>
