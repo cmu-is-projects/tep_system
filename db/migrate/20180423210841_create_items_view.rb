@@ -9,7 +9,7 @@ class CreateItemsView < ActiveRecord::Migration[5.1]
     			  FROM salesforce.pos_transactions__c as pos
     			  		 JOIN salesforce.product_master__c as prod
     			  		 ON pos.product_master__c = prod.sfid 
-    			 WHERE carton__c NOT NULL; 
+    			 WHERE carton__c IS NOT NULL; 
 		  SQL
 		end
   end
