@@ -7,7 +7,7 @@ DataCat is a POS system built for [The Education Partnership](https://www.theedu
 ## Data Sync with Salesforce 
 One of the biggest things we had to consider when developing this system was the synchronization of data with Salesforce. We used (Heroku Connect)[https://devcenter.heroku.com/articles/heroku-connect] to read and write data to Salesforce. Heroku Connect allows us to poll data from Salesforce at a regular frequency into our Postgres database. To learn more about how Heroku Connect can be used to read data and step by step instructions, check out our Heroku Connect demo using a dummy Rails app here: https://github.com/stephaniepang97/hc_demo.   
 
-Currently, teachers, schools and items are polled every 10 minutes. In Salesforce, these objects are called Contacts, Accounts, and POS Transactions, respectively. After reading them into our database, they are stored as postgres tables in the `salesforce` schema called `salesforce.account`, `salesforce.contact`, and `salesforce.pos_transactions__c`. To filter the data we read and manipulate them so that we can use them in our respective Rails models, we created migrations (stored in the `db/migrate` folder) that create views from these tables called `schools.view`, `teachers.view`, and `items.view`.  
+Currently, teachers, schools and items are polled every 10 minutes. In Salesforce, these objects are called Contacts, Accounts, and POS Transactions, respectively. After reading them into our database, they are stored as postgres tables in the `salesforce` schema called `salesforce.account`, `salesforce.contact`, and `salesforce.pos_transactions__c`. To filter the data we read and manipulate them so that we can use them in our respective Rails models, we created migrations (stored in the `db/migrate` folder) that create views from these tables called `schools_view`, `teachers_view`, and `items_view`.  
 
 If you are cloning our repo and want to deploy it to your own Heroku account, you will have to run the following commands (assuming you have [Heroku Cli](https://devcenter.heroku.com/articles/heroku-cli) installed already):
 ```
@@ -20,7 +20,7 @@ heroku run rake db:migrate
 ```
 Then you can run `heroku open` to visit the app in your browser, and `heroku pg:psql` to work with your Heroku Postgres database in your terminal.   
 
-## Running Locally 
+## Running Locally
 To set up or reset local postgres database, make sure you have postgres installed and running, then do:
 ```
 rails db:drop 
