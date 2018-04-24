@@ -2,6 +2,6 @@
 <%= CSV.generate_line headers %>
 <% for order in @orders %>
     <% for order_item in order.order_items %>
-        <%= CSV.generate_line([order.shopping_date, order.teacher.last_name, order.teacher.first_name, order_item.item.name, order_item.quantity])%>
+        <%= CSV.generate_line([order.shopping_date, order.teacher.last_name, order.teacher.first_name, order_item.item.name, order_item.quantity])-%>
     <% end %>
 <% end %>
