@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   before_validation :set_dates
 
   belongs_to :user
-  belongs_to :teacher
+  belongs_to :teacher, foreign_key: :teacher_id, primary_key: :sfid
   
   has_many :order_items
   has_many :items, through: :order_items
