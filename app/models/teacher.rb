@@ -6,14 +6,6 @@ class Teacher < ApplicationRecord
   # this item is synced to Salesforce teachers using Heroku Connect
   self.table_name = "teachers_view"
   self.primary_key = "sfid"
-  # alias_attribute :first_name, :firstname
-  # alias_attribute :last_name, :lastname
-  # alias_attribute :school_id, :accountid
-  # alias_attribute :email, :email
-  # alias_attribute :phone, :phone
-
-  # filter contacts for teachers 
-  # Teacher.where("title NOT ILIKE ? OR title IS NULL", "%teacher%").delete_all
   ##############################################
 
 

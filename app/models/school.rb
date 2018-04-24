@@ -5,9 +5,6 @@ class School < ApplicationRecord
 	# this item is synced to Salesforce schools using Heroku Connect
 	self.table_name = "schools_view"
 	self.primary_key = "sfid"
-	# self = self.where(type: "School")
-	# self.name = self.organization_name__c
-	# self.phone = self.phone__c
 	##############################################
 
 	scope :alphabetical, -> {order(:name)}

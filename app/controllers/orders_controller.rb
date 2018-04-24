@@ -17,9 +17,9 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
   end
 
-  def new
+  def new # checkout page
     @order = Order.new
-    @items = Item.active.all
+    @items = Item.get_active_items_with_unique_names
     order_item = @order.order_items.build
   end
 
