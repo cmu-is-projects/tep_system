@@ -8,6 +8,8 @@
       <th>Name</th>
       <th>Maximum Packs</th>
       <th>Quantity per Unit</th>
+      <th>POS Transaction</th>
+      <th>Carton</th>
       <th>Active</th>
       <th colspan="3"></th>
     </tr>
@@ -19,6 +21,8 @@
         <td><%= item.name %></td>
         <td><%= item.max_packs %></td>
         <td><%= item.qty_per_unit %></td>
+        <td><%= item.pos_trans_id %></td>
+        <td><%= item.carton %></td>
         <td><%= item.active %></td>
       </tr>
     <% end %>
