@@ -308,7 +308,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   cucumber-rails
   database_cleaner
-  doorkeeper
   factory_bot_rails (= 4.8.2)
   faker (= 1.8.7)
   hirb (= 0.7.3)
