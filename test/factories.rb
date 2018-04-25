@@ -30,10 +30,13 @@ FactoryBot.define do
     association :school
     first_name "Amy"
     last_name "Lin"
+    email "amylin@gmail.com"
+    phone "2158039888"
   end
 
   factory :school do
     name "Carnegie Mellon University"
+    phone "2676407466"
   end
 
   factory :item do
