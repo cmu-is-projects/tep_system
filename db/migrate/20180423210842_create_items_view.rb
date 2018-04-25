@@ -9,7 +9,7 @@ class CreateItemsView < ActiveRecord::Migration[5.1]
                  pos.qty_per_unit__c::INTEGER as qty_per_unit,
     				     0 as max_packs, 
                  pos.carton__c as carton,
-                 (pos.carton__c = "a0NW0000002RrvPMAS") as active
+                 (pos.carton__c = 'a0NW0000002RrvPMAS') as active
     			  FROM salesforce.pos_transactions__c as pos
     			  	   JOIN salesforce.product_master__c as prod
     			  	   ON pos.product_master__c = prod.sfid 
