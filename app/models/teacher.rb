@@ -15,12 +15,4 @@ class Teacher < ApplicationRecord
   	"#{last_name}, #{first_name}"
   end
 
-  private 
-
-  def self.delete_non_teachers
-    if Teacher.column_names.include? "title" then 
-      Teacher.where("title NOT ILIKE ? OR title IS NULL", "%teacher%").delete_all
-    end 
-  end
-
 end
