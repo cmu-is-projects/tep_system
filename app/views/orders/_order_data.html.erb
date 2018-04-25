@@ -1,8 +1,12 @@
 <div class="card">
   <div class="card-content">
-    <h5>Information for Order from <%= @order.created_at.strftime(" %B %d, %Y") %> </h5> 
+    <div class="row">
+    <h5 class="col s11">Information for Order from <%= @order.created_at.strftime(" %B %d, %Y") %> </h5> 
 
-    <%= link_to 'Edit', edit_order_path(@order) %>
+    <div class="col s1">
+      <i class="material-icons"><%= link_to('edit', edit_order_path(@order))%></i>
+    </div>
+    </div>
     </br>
 
     <b>Teacher:&nbsp;&nbsp;</b>
