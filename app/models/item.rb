@@ -19,8 +19,7 @@ class Item < ApplicationRecord
 	scope :alphabetical, ->{order(:name)}
  
 	def self.get_active_items_with_unique_names
-		Item.active.uniq(&:name)
-		# Item.active.sort_by{|i| i.name}.sort_by{|i| i.qty_per_unit}.uniq(&:name)
+		Item.active.order(:name, :qty_per_unit).uniq(&:name)
 	end 
 
 	def self.pos_transaction_ids_for(name)
