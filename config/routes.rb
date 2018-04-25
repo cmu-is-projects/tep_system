@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: :login
   #get 'logout', to: 'sessions#destroy', as: :logout
 
-  root 'home#index'
+  root 'home#index', as: 'home'
 
   # custom paths
   get 'sync', to: 'orders#sync', as: 'sync'
