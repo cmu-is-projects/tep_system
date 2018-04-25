@@ -7,10 +7,8 @@
 							'Related Outgoing POS', 
 							'Incoming POS Contact'] %>
 <%= CSV.generate_line headers -%>
-
 <% for order in @orders %>
     <% for order_item in order.order_items %>
-
         <%= CSV.generate_line([
         	order.teacher.last_name, 
         	order.teacher.first_name, 
@@ -21,6 +19,5 @@
         	order_item.item.pos_trans_id, 
         	order.teacher.sfid
         	])-%>
-
     <% end %>
 <% end %>
