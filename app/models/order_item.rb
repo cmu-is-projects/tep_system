@@ -1,7 +1,7 @@
 class OrderItem < ApplicationRecord
   #Relationships
   belongs_to :order
-  belongs_to :item
+  belongs_to :item, foreign_key: :item_id, primary_key: :sfid
 
   #Validations
   validates_presence_of :order, :item
