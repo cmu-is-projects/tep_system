@@ -81,6 +81,8 @@ gem 'carrierwave', '1.2.2'
 gem 'will_paginate', '3.1.6'
 gem 'bcrypt'
 gem 'oauth2'
+gem 'figaro'
+gem 'se'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
