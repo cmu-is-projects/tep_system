@@ -21,6 +21,10 @@ heroku run rake db:migrate
 Then you can run `heroku open` to visit the app in your browser, and `heroku pg:psql` to work with your Heroku Postgres database in your terminal.   
 
 ## Running Locally
+To make our code run locally as well as on Heroku, we had to if statements in the migrations and models to check whether the salesforce tables exists and only execute certain commands if they do.  
+From a [stackoverflow](https://stackoverflow.com/questions/6590107/check-if-a-table-exists-in-rails) post, you can check if tables/views exists by doing:  
+![check tables exist](https://image.ibb.co/dPe4Dc/Screen_Shot_2018_04_26_at_4_16_56_PM.png)
+
 To set up or reset local postgres database, make sure you have postgres installed and running, then do:
 ```
 rails db:drop 
