@@ -2,7 +2,12 @@ class Order < ApplicationRecord
   before_validation :set_dates
 
   belongs_to :user
-  belongs_to :teacher, foreign_key: :teacher_id, primary_key: :sfid
+
+  if sync_to_salesforce? then 
+    belongs_to :teacher, foreign_key: :teacher_id, primary_key: :sfid
+  else 
+    belongs_to :teacher
+  end
   
   has_many :order_items
   has_many :items, through: :order_items
@@ -27,7 +32,6 @@ class Order < ApplicationRecord
   #Validations
   validates_presence_of :user, :teacher
   validates_date :shopping_date, on_or_before: lambda { Date.current }, allow_blank: true
-  #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable
   validates_date :date_entered, on_or_before: lambda { Date.current }
   validates_date :date_entered, on_or_after: :shopping_date
 

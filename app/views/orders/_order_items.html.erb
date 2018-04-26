@@ -5,12 +5,13 @@
       <thead>
         <th>Item</th>
         <th>Quantity</th>
+        <th>Outgoing POS</th>
       </thead>
         <% @order.order_items.each do |orderitem|%>
           <tr> 
             <td><%= orderitem.item.name %></td>
             <td><%= orderitem.quantity%></td>
-            <td><%= orderitem.item.pos_trans_id %></td>
+            <td><%= orderitem.item.try(:pos_trans_id) || "NA" %></td>
           </tr>
         <% end %>
 

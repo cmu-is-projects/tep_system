@@ -16,7 +16,7 @@
         	order_item.quantity*order_item.item.qty_per_unit, 
         	order.shopping_date, 
         	'012E0000000Mzwe', 
-        	order_item.item.pos_trans_id, 
+        	order_item.item.try(:pos_trans_id) || "NA", 
         	order.teacher.sfid
         	])-%>
     <% end %>
