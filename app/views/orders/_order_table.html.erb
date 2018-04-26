@@ -20,7 +20,7 @@
         <td><%= order.shopping_date.strftime("%m/%d/%y") %></td>
         <td><%= order_item.item.name %></td>
         <td><%= order_item.quantity %></td>
-        <td><%= order_item.item.pos_trans_id %></td> 
+        <td><%= order_item.item.try(:pos_trans_id) || "NA" %></td> 
         <td><%= order.uploaded ? "Yes" : "No" %></td>
      </tr>
      <% end %>
