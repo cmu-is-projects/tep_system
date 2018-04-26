@@ -27,7 +27,6 @@ class Order < ApplicationRecord
   #Validations
   validates_presence_of :user, :teacher
   validates_date :shopping_date, on_or_before: lambda { Date.current }, allow_blank: true
-  #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable
   validates_date :date_entered, on_or_before: lambda { Date.current }
   validates_date :date_entered, on_or_after: :shopping_date
 
