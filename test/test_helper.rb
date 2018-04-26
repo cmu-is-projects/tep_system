@@ -22,6 +22,13 @@ class ActiveSupport::TestCase
     assert !condition, msg
   end
 
+  # A method to login in a vet to start things off
+  def login_admin
+    @admin = FactoryBot.create(:user, email: "cmanaog@gmail.com", first_name: "Christian", last_name: "Manaog", username: "christian", password: "secret", password_confirmation: "secret", role: "Administrator", active: true)
+    get login_path
+    post sessions_path, params: { username: "christian", password: "secret" }
+  end
+  
   # Spruce up minitest results...
   Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
 end
