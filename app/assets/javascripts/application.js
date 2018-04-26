@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_nested_form
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize-form

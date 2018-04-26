@@ -1,12 +1,14 @@
 class School < ApplicationRecord
-  has_many :teachers
 
-	# this item is synced to Salesforce schools using Heroku Connect
-	# self.table_name = "salesforce.school__c"
-	# self.name = self.organization_name__c
-	# self.phone = self.phone__c
-	# alias_attribute :name, :organization_name__c
-	# alias_attribute :phone, :phone__c
+	# sync to Salesforce schools using Heroku Connect
+	if sync_to_salesforce? then 
+	  has_many :teachers, primary_key: :sfid
+
+		self.table_name = "schools_view"
+		self.primary_key = "sfid"
+	else 
+		has_many :teachers
+	end 
 
 	scope :alphabetical, -> {order(:name)}
 end
