@@ -1,12 +1,16 @@
 class Teacher < ApplicationRecord
-  belongs_to :school, foreign_key: :school_sfid
-  has_many :orders, primary_key: :sfid 
 
-  ####### COMMENT OUT IF RUNNING LOCALLY #######
-  # this item is synced to Salesforce teachers using Heroku Connect
-  self.table_name = "teachers_view"
-  self.primary_key = "sfid"
-  ##############################################
+  # sync to Salesforce teachers using Heroku Connect
+  if data_source_exists? "teachers_view" then 
+    belongs_to :school, foreign_key: :school_sfid
+    has_many :orders, primary_key: :sfid 
+
+    self.table_name = "teachers_view"
+    self.primary_key = "sfid"
+  else 
+    belongs_to :school
+    has_many :orders
+  end 
 
   scope :alphabetical, ->{order(:last_name, :first_name)}
   scope :for_school, ->(school_sfid){where(XXX: school_sfid)}
