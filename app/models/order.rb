@@ -2,7 +2,12 @@ class Order < ApplicationRecord
   before_validation :set_dates
 
   belongs_to :user
-  belongs_to :teacher, foreign_key: :teacher_id, primary_key: :sfid
+
+  if sync_to_salesforce? then 
+    belongs_to :teacher, foreign_key: :teacher_id, primary_key: :sfid
+  else 
+    belongs_to :teacher
+  end
   
   has_many :order_items
   has_many :items, through: :order_items

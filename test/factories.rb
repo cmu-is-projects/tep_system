@@ -16,7 +16,7 @@ FactoryBot.define do
   #following factories used for purpose of testing order and order_items
 
   factory :user do
-    username "admin"
+    username "cat"
     password "password"
     password_confirmation "password"
     first_name "Catherine"

@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
 
 	# sync to Salesforce POS Transactions using Heroku Connect
-	if self.connection.data_source_exists? "items_view" then 
+	if sync_to_salesforce? then 
 	  has_many :order_items, primary_key: :sfid
 
 	  self.table_name = "items_view"

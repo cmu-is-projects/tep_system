@@ -1,7 +1,7 @@
 class School < ApplicationRecord
 
 	# sync to Salesforce schools using Heroku Connect
-	if self.connection.data_source_exists? "schools_view" then 
+	if sync_to_salesforce? then 
 	  has_many :teachers, primary_key: :sfid
 
 		self.table_name = "schools_view"
