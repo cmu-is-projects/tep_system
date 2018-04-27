@@ -1,7 +1,7 @@
 # Snagged from PATS 2 by Prof H
 class User < ApplicationRecord
-	has_secure_password
-	has_many :orders
+    has_secure_password
+    has_many :orders
 
     # Validations
     # make sure required fields are present
@@ -11,12 +11,14 @@ class User < ApplicationRecord
     validates_presence_of :password_confirmation, :on => :create 
     validates_confirmation_of :password, message: "does not match"
     validates_length_of :password, :minimum => 4, message: "must be at least 4 characters long", :allow_blank => true
-    validates_inclusion_of :role, in: %w( Administrator ), message: "is not recognized in the system"
+    validates_inclusion_of :role, in: %w[admin manager volunteer teacher], message: "is not recognized in the system"
 
-	scope :alphabetical, ->{order(:last_name, :first_name)}
+    ROLES = [['admin', :admin],['manager', :manager],['volunteer', :volunteer],['teacher',:teacher]]
 
-	def name
-  	    "#{last_name}, #{first_name}"
+    scope :alphabetical, ->{order(:last_name, :first_name)}
+
+    def name
+        "#{last_name}, #{first_name}"
     end
 
     def role?(authorized_role)

@@ -20,11 +20,11 @@ class UsersController < ApplicationController
 	def destroy
 		@user = User.find(params[:id])
 		if @user.destroy
-      flash[:notice] = "Successfully removed #{@user.name}."
-      redirect_to users_path
-    else
-      render action: 'index'
-    end
+	      flash[:notice] = "Successfully removed #{@user.name}."
+	      redirect_to users_path
+	    else
+	      render action: 'index'
+	    end
 	end 
 
 	private
