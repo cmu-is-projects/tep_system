@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
     <div class="card">
         <div class="card-content">
             <div class="card-title">Links to Other Pages</div>

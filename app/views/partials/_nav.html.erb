@@ -13,7 +13,7 @@
     </div>
     <ul class="right hide-on-med-and-down">
         <% if logged_in? %>
-            <li id="username"><%= current_user.first_name %> <%= current_user.first_name %> (<%= current_user.role %>)</li>
+            <li id="username"><%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.role %>)</li>
             <li><%= link_to 'Logout', logout_path %></li>
         <% else %>
             <li><%= link_to 'Login', login_path %></li>
