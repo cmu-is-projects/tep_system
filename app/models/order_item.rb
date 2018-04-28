@@ -1,7 +1,12 @@
 class OrderItem < ApplicationRecord
   #Relationships
   belongs_to :order
-  belongs_to :item
+
+  if sync_to_salesforce? then 
+    belongs_to :item, foreign_key: :item_id, primary_key: :sfid
+  else 
+    belongs_to :item
+  end
 
   #Validations
   validates_presence_of :order, :item

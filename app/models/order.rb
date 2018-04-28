@@ -2,7 +2,12 @@ class Order < ApplicationRecord
   before_validation :set_dates
 
   belongs_to :user
-  belongs_to :teacher
+
+  if sync_to_salesforce? then 
+    belongs_to :teacher, foreign_key: :teacher_id, primary_key: :sfid
+  else 
+    belongs_to :teacher
+  end
   
   has_many :order_items
   has_many :items, through: :order_items
@@ -10,10 +15,23 @@ class Order < ApplicationRecord
   #allow orderitems to be nested within orders
   accepts_nested_attributes_for :order_items, reject_if: ->(oi) { oi[:quantity].blank? }
 
+  # ####### COMMENT OUT IF RUNNING LOCALLY #######
+  # # this item is synced to Salesforce POS Transactions using Heroku Connect
+  # self.table_name = "salesforce.contact"
+  # self.primary_key = "sfid"
+  # alias_attribute :first_name, :firstname
+  # alias_attribute :last_name, :lastname
+  # alias_attribute :school_id, :accountid
+  # # alias_attribute :email, :email
+  # # alias_attribute :phone, :phone
+
+  # # filter POS Transactions for Incoming POS Transactions 
+  # Teacher.where("title NOT ILIKE ? OR title IS NULL", "%teacher%").delete_all
+  # ##############################################
+
   #Validations
   validates_presence_of :user, :teacher
   validates_date :shopping_date, on_or_before: lambda { Date.current }, allow_blank: true
-  #validates_date :date_entered, on: lambda { Date.current }, on: :create #questionable
   validates_date :date_entered, on_or_before: lambda { Date.current }
   validates_date :date_entered, on_or_after: :shopping_date
 

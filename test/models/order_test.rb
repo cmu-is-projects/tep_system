@@ -5,6 +5,8 @@ class OrderTest < ActiveSupport::TestCase
   # test relationships
   should belong_to(:user)
   should belong_to(:teacher)
+  should have_many(:order_items)
+  should have_many(:items).through(:order_items)
 
   # test validations with matchers
   should validate_presence_of(:user)
@@ -31,7 +33,6 @@ class OrderTest < ActiveSupport::TestCase
       destroy_schools
       destroy_users
     end
-
 
     should "check to make sure the date_entered is on or after the shopping_date" do
       @good_date1 = FactoryBot.build(:order, user: @user, teacher: @teacher, date_entered: Date.current, shopping_date: Date.current)
