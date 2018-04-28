@@ -1,15 +1,11 @@
 # Snagged from PATS 2 by Prof H
 class User < ApplicationRecord
-<<<<<<< HEAD
 
     attr_accessor :tok
 
-	has_secure_password
-	has_many :orders
-=======
     has_secure_password
     has_many :orders
->>>>>>> 5e48e7e4bbf3b05ac74cf6bc85a858729bf8daf6
+
 
     # Validations
     # make sure required fields are present
