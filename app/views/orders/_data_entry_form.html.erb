@@ -1,45 +1,64 @@
 <div class="form-wrapper">
 <h1>Checkout</h1> 
-<%= simple_nested_form_for @order,:html => { :class => 'form-horizontal' } do |order_form| %>
-    <%= order_form.error_notification %>
-    <div class="row">
-        <legend>Transaction Info</legend>
-        <div class="container">
-            <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
-            <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
-            <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
-            <%= order_form.input :uploaded, as: :hidden, input_html: { value: false } %>
+
+    <%= simple_nested_form_for @order,:html => { :class => 'form-horizontal' } do |order_form| %>
+        <%= order_form.error_notification %>
+        <div class="row">
+            <legend>Transaction Info</legend>
+            <div class="container">
+                <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
+                <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
+                <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
+                <%= order_form.input :uploaded, as: :hidden, input_html: { value: false } %>
+            </div>
         </div>
-    </div>
 
-    <div class="row form-quantities">
-        <legend> Item Quantities </legend>
-        <div class="container">
+        <div class="row form-quantities">
+            <legend> Item Quantities </legend>
 
-        <% unless @items.empty? then %>
-
-            <% @items.each do |i| %>
-                <%=order_form.simple_fields_for :order_items do |oi_form| %>
-                    <span class="col s10 offset-s1"><%= i.name + ":" %></span>
-                    <div class="hidden-field">
-                    <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.try(:sfid) || i.id} %>
-                    </div>
-                    <%= oi_form.input :quantity, as: :integer, input_html: {class: "col s3 inline"} %>
-                <%end%>
+            <!-- instructions on reordering items; took it out of logged in conditions for now -->
+            <% if (current_user.role?(:admin) || (current_user.role?(:manager))) %>
+                <p><i>Click and drag the items to reorder them.</i></p>
             <% end %>
-            
-        <% else %>
-            <p>There are no active items in the system at this time.</p>
-        <% end %>
-        </div>
-    </div>
-    
+                
 
-    <div class="row">
-        <div class="form-actions col s8">
-            <%= order_form.button :submit %>
-            <%= link_to 'Cancel', orders_path, class: 'button alert radius' %>
+            <div class="container">
+
+            <% unless @items.empty? then %>
+
+                <table>
+                    <!-- only sortable if an admin or manager; did not put in admin/manager role yet -->
+                    <% if logged_in? %>
+                        <tbody class="sortable">  <!-- sortable target -->
+                    <% else %>
+                        <tbody>
+                    <% end %>
+                            <% @items.each do |i| %>
+                                <%=order_form.simple_fields_for :order_items do |oi_form| %>
+                                    <tr id="<%= i.sortable_id %>">
+                                        <td><span class="col s10 offset-s1"><%= i.name + ":" %></span></td>
+                                        <td><div class="hidden-field">
+                                            <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.try(:sfid) || i.id} %>
+                                        </div></td>
+                                        <td><%= oi_form.input :quantity, as: :integer, input_html: {class: "col s3 inline"} %></td>
+                                    </tr>
+                                <%end%>
+                            <% end %>
+                        </tbody>
+                </table>
+                
+            <% else %>
+                <p>There are no active items in the system at this time.</p>
+            <% end %>
+            </div>
         </div>
-    </div>
-<% end %>
+        
+
+        <div class="row">
+            <div class="form-actions col s8">
+                <%= order_form.button :submit %>
+                <%= link_to 'Cancel', orders_path, class: 'button alert radius' %>
+            </div>
+        </div>
+    <% end %>
 </div>

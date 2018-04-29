@@ -16,6 +16,9 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize-form
+//= require jquery_ujs
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 
 // @import "materialize";
 // @import "https://fonts.googleapis.com/icon?family=Material+Icons";
@@ -27,3 +30,7 @@ $(document).ready(function() {
 $(document).on('nested:fieldAdded', function(event){
   window.materializeForm.init()
 })
+
+$(function() {
+  $('.sortable').railsSortable();
+});
