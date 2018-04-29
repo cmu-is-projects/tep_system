@@ -26,9 +26,9 @@ class Teacher < ApplicationRecord
   # able to make orders 
   def belongs_to_valid_school?
     if Teacher.sync_to_salesforce?
-      School.exists? sfid
+      School.exists? school_sfid
     else 
-      School.exists? id
+      School.exists? school_id
     end
   end 
 
