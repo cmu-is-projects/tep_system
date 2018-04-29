@@ -17,7 +17,7 @@
             <legend> Item Quantities </legend>
 
             <!-- instructions on reordering items; took it out of logged in conditions for now -->
-            <% if (current_user.role?(:admin) || (current_user.role?(:manager))) %>
+            <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
                 <p><i>Click and drag the items to reorder them.</i></p>
             <% end %>
                 
