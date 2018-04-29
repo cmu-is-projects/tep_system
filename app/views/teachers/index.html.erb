@@ -19,7 +19,11 @@
       <tr>
         <td><%= link_to teacher.first_name, teacher_path(teacher) %></td>
         <td><%= link_to teacher.last_name, teacher_path(teacher) %></td>
-        <td><%= link_to teacher.school.name, school_path(teacher.school) %></td>
+        <% if teacher.belongs_to_valid_school? %>
+          <td><%= link_to teacher.school.name, school_path(teacher.school) %></td>
+        <% else %> 
+          <td><%= "No valid school found" %></td>
+        <% end %> 
         <td><%= teacher.email %></td>
         <td><%= teacher.phone %></td>
       </tr>
