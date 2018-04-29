@@ -1,5 +1,5 @@
 class AddDefaultUser < ActiveRecord::Migration[5.1]
- def up
+   def up
     admin = User.new
     admin.username = "admin"
     admin.first_name = "Admin"
@@ -7,7 +7,7 @@ class AddDefaultUser < ActiveRecord::Migration[5.1]
     admin.email = "admin@example.com"
     admin.password = "secret"
     admin.password_confirmation = "secret"
-    admin.role = "Administrator"
+    admin.role = "admin"
     admin.save
   end
   def down
