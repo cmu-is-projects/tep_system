@@ -27,7 +27,7 @@
             <% unless @items.empty? then %>
 
                 <table>
-                    <!-- only sortable if an admin or manager; did not put in admin/manager role yet -->
+                    <!-- only sortable if an admin or manager -->
                     <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
                         <tbody class="sortable">  <!-- sortable target -->
                     <% else %>
