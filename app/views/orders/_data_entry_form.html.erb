@@ -16,7 +16,7 @@
         <div class="row form-quantities">
             <legend> Item Quantities </legend>
 
-            <!-- instructions on reordering items; took it out of logged in conditions for now -->
+            <!-- instructions on reordering items -->
             <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
                 <p><i>Click and drag the items to reorder them.</i></p>
             <% end %>
@@ -28,7 +28,7 @@
 
                 <table>
                     <!-- only sortable if an admin or manager; did not put in admin/manager role yet -->
-                    <% if logged_in? %>
+                    <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
                         <tbody class="sortable">  <!-- sortable target -->
                     <% else %>
                         <tbody>

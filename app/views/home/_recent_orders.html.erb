@@ -5,19 +5,23 @@
      
        <span class="card-title">Recent Orders</span>
           <table class="highlight">
-            <thead>
-              <th></th>
-              <th>Name</th>
-              <th>Shopping Date</th>
-              <th>Entered On</th>
-            </thead>
-              <% for order in @recent_orders %>
-                  <tr>
-                    <td><i class="material-icons"><%= link_to 'search', order_path(order)%></i></td>
-                    <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
-                    <td><%= link_to order.shopping_date.strftime("%m/%d/%y"), order_path(order) %></td>
-                    <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
-                  </tr>
+              <% if @recent_orders.empty? %>
+                <p>No orders in the system right now :(</p>
+              <% else %>
+                <thead>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Shopping Date</th>
+                  <th>Entered On</th>
+                </thead>
+                <% for order in @recent_orders %>
+                    <tr>
+                      <td><i class="material-icons"><%= link_to 'search', order_path(order)%></i></td>
+                      <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
+                      <td><%= link_to order.shopping_date.strftime("%m/%d/%y"), order_path(order) %></td>
+                      <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
+                    </tr>
+                <% end %>
               <% end %>
           </table>
 
