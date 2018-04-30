@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
 
   def new # checkout page
     @order = Order.new
-    @items = Item.get_active_items_with_unique_names
+    @items = Item.order(:sort).get_items_with_unique_names
     order_item = @order.order_items.build
   end
 
@@ -33,9 +33,9 @@ class OrdersController < ApplicationController
       flash[:notice] = "Successfully added #{@order.id}."
       redirect_to order_path(@order)
     else
+      render action: 'new'
       @items = Item.get_active_items_with_unique_names
       order_item = @order.order_items.build
-      render action: 'new'
     end
   end
 

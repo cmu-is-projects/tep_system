@@ -21,11 +21,11 @@ class ItemsController < ApplicationController
 	def destroy
 		@item = Item.find(params[:id])
 		if @item.destroy
-      flash[:notice] = "Successfully removed #{@item.name}."
-      redirect_to items_path
-    else
-      render action: 'index'
-    end
+	      flash[:notice] = "Successfully removed #{@item.name}."
+	      redirect_to items_path
+	    else
+	      render action: 'index'
+	    end
 	end 
 
 	private
