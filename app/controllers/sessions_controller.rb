@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
   end
   
   def create
-    tok = User.authenticate(params[:username], params[:password])
-    if not tok.nil?
+    # tok = User.authenticate(params[:username], params[:password])
+    # if not tok.nil?
+    user = User.authenticate(params[:username], params[:password])
+    # if not tok.nil?
+    if user
       session[:user_id] = user.id
-      #ENV['OAUTH_DEBUG'] = 'true'
-      session[:token] = tok
-      user_info = parse_user_info(tok)
       redirect_to home_path, notice: "Logged in!"
     else
       flash.now.alert = "Username and/or password is invalid"
@@ -20,7 +20,6 @@ class SessionsController < ApplicationController
   
   def destroy
     session[:user_id] = nil
-    session[:token] = nil
     redirect_to home_path, notice: "Logged out!"
   end
 end
