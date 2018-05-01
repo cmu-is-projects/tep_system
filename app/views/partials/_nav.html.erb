@@ -12,11 +12,11 @@
         </ul>
     </div>
     <ul class="right hide-on-med-and-down">
-        <!-- Already logged in; hardcoded username -->
-        <!-- <li id="username">Catherine Price (Admin)</li>
-        <li><%= link_to 'Logout'%></li> -->
-
-        <!-- Need to login -->
-        <li><%= link_to 'Login', login_path %></li>
+        <% if logged_in? %>
+            <li id="username"><%= current_user.first_name %> <%= current_user.last_name %> (<%= current_user.role %>)</li>
+            <li><%= link_to 'Logout', logout_path %></li>
+        <% else %>
+            <li><%= link_to 'Login', login_path %></li>
+        <% end %>
     </ul>
 </nav>

@@ -22,7 +22,7 @@ FactoryBot.define do
     first_name "Catherine"
     last_name "Price"
     email "cat@theeducationpartnership.org"
-    role "Administrator"
+    role "admin"
     active true
   end
 

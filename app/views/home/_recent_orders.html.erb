@@ -1,33 +1,41 @@
 <div class="card">
   <div class="card-content">
-  <!-- if user is volunteer/not admin -->
-<!--   <span class="card-title">About The Education Partnership</span>
-    <p>We provide school supplies for a brighter future. When kids have what they need to actively engage with the learning process, they’re capable of amazing things. It’s why every one of our programs is designed to make sure local students are equipped with the basics and empowered to succeed in the classroom and beyond.</p><br>
 
-    <p>Our vision is for a community that is invested in meeting the needs of local students and their teachers. Students helping students, teachers helping teachers, communities helping schools.</p><br><br>
+     <% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
+     
+       <span class="card-title">Recent Orders</span>
+          <table class="highlight">
+              <% if @recent_orders.empty? %>
+                <p>No recent orders</p>
+              <% else %>
+                <thead>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Shopping Date</th>
+                  <th>Entered On</th>
+                </thead>
+                <% for order in @recent_orders %>
+                    <tr>
+                      <td><i class="material-icons"><%= link_to 'search', order_path(order)%></i></td>
+                      <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
+                      <td><%= link_to order.shopping_date.strftime("%m/%d/%y"), order_path(order) %></td>
+                      <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
+                    </tr>
+                <% end %>
+              <% end %>
+          </table>
 
-  <span class="card-title">Our Mission Statement</span>
-    <p>To address educational inequities by providing and enabling access to the tools and resources necessary to support teachers and enhance a student's ability to learn and succeed.</p> -->
+    <% else %>
 
-  <!-- if user is admin -->
- <span class="card-title">Recent Orders</span>
-    <table class="highlight">
-      <thead>
-        <th></th>
-        <th>Name</th>
-        <th>Shopping Date</th>
-        <th>Entered On</th>
-      </thead>
-        <% for order in @recent_orders %>
-            <tr>
-              <td><i class="material-icons"><%= link_to 'search', order_path(order)%></i></td>
-              <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
-              <td><%= link_to order.shopping_date.strftime("%m/%d/%y"), order_path(order) %></td>
-              <td><%= order.date_entered.strftime("%m/%d/%y") %></td>
-            </tr>
-        <% end %>
-    </table>
+      <span class="card-title">About The Education Partnership</span>
+        <p>We provide school supplies for a brighter future. When kids have what they need to actively engage with the learning process, they’re capable of amazing things. It’s why every one of our programs is designed to make sure local students are equipped with the basics and empowered to succeed in the classroom and beyond.</p><br>
 
+        <p>Our vision is for a community that is invested in meeting the needs of local students and their teachers. Students helping students, teachers helping teachers, communities helping schools.</p><br><br>
+
+      <span class="card-title">Our Mission Statement</span>
+        <p>To address educational inequities by providing and enabling access to the tools and resources necessary to support teachers and enhance a student's ability to learn and succeed.</p>
+
+    <% end %>
 
   </div>
 </div>

@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+	include RailsSortable::Model
 
 	# sync to Salesforce POS Transactions using Heroku Connect
 	if sync_to_salesforce? then 
@@ -21,9 +22,11 @@ class Item < ApplicationRecord
 	scope :active, -> {where(active: true)}
 	scope :inactive, -> {where(active: false)}
 	scope :alphabetical, ->{order(:name)}
+
+	set_sortable :sort  # Indicate a sort column
  
-	def self.get_active_items_with_unique_names
-		Item.active.order(:name, :qty_per_unit).uniq(&:name)
+	def self.get_items_with_unique_names
+		Item.order(:name, :qty_per_unit).uniq(&:name)
 	end 
 
 	def self.pos_transaction_ids_for(name)
