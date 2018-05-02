@@ -37,7 +37,7 @@ class Order < ApplicationRecord
   end
 
   def self.write_to_salesforce
-    
+    # loop through not_uploaded 
   end
   
   # def self.to_csv
