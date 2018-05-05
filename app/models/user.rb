@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
     # Validations
     # make sure required fields are present
-    validates_presence_of :username, :password_digest
-    validates :username, presence: true, uniqueness: { case_sensitive: false}
+    validates_presence_of :email, :password_digest
+    validates :email, presence: true, uniqueness: { case_sensitive: false}
     validates_presence_of :password, :on => :create 
     validates_presence_of :password_confirmation, :on => :create 
     validates_confirmation_of :password, message: "does not match"
@@ -29,9 +29,9 @@ class User < ApplicationRecord
         role.downcase.to_sym == authorized_role
     end
   
-    # login by username
-    def self.authenticate(username, password)
-        find_by_username(username).try(:authenticate, password)
+    # login by email
+    def self.authenticate(email, password)
+        find_by_email(email).try(:authenticate, password)
     end
 
 
