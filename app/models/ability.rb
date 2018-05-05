@@ -15,12 +15,6 @@ class Ability
         can :create, OrderItem do |order_item|
             order_item.id == user.order_item
         end
-    elsif user.role? :manager
-        can :create, Order
-        can :update, Item 
-        can :read, School
-        can :read, OrderItems
-        can :read, Teachers
     else
         can :read, Home
     end
