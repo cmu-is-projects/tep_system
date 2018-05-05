@@ -23,12 +23,19 @@
         <td><%= user.role %></td>
         <td><%=user.active ? "Yes" : "No" %></td>
         <td>
-        <% if can? :edit, user %>
-          <%= link_to edit_user_path(user) do %>
-            <i class="material-icons">edit</i>
-          <% end %> 
-        <% end %>
-      </td>
+          <% if can? :edit, user %>
+            <%= link_to edit_user_path(user) do %>
+              <i class="material-icons">edit</i>
+            <% end %> 
+          <% end %>
+        </td>
+        <!-- <td>
+          <% if can? :destroy, user %>
+            <
+            <i class="material-icons">delete</i>
+            
+          <% end %>
+        </td> -->
       </tr>
     <% end %>
     <%= will_paginate @users %>
