@@ -12,7 +12,11 @@
     <b>Teacher:&nbsp;&nbsp;</b>
       <%= link_to @order.teacher.name, teacher_path(@order.teacher) %><br />
     <b>School:&nbsp;&nbsp;</b>
+    <% if @order.teacher.belongs_to_valid_school? %>
       <%= link_to @order.teacher.school.name, school_path(@order.teacher.school) %><br />
+    <% else %> 
+      <%= "No valid school found" %><br />
+    <% end %> 
     <b>Semester:&nbsp;&nbsp;</b>
       <%= "Spring 2018" %><br />
     <b>Shopped on:&nbsp;&nbsp;</b>

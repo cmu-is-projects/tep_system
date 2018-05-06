@@ -6,7 +6,11 @@
       <%= @teacher.name %><br />
 
     <b>School:&nbsp;&nbsp;</b>
+    <% if @teacher.belongs_to_valid_school? %>
       <%= link_to @teacher.school.name, school_path(@teacher.school) %><br />
+    <% else %> 
+      <%= "No valid school found" %><br />
+    <% end %> 
 
     <b>Title:&nbsp;&nbsp;</b>
     <%= if @teacher.has_attribute? :title then @teacher.title end%><br />
