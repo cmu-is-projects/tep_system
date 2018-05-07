@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-content">
 
-     <% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
+     <% if logged_in? && (current_user.role?(:admin))%>
      
        <span class="card-title">Recent Orders</span>
           <table class="highlight">

@@ -1,0 +1,40 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+# client_id = "3321f12932e86eb7161d0e03d9e472cb1978992a10250ba2af9c30b9d1705ec5"
+# client_secret = "cd1fc4b2cf18ba39fc2d52b2bd90e15685651ae9f75c98a898e22363f14ac23d'
+# redirect_uri = "urn:ietf:wg:oauth:2.0:oob"
+# site = "https://tep-lending-library.herokuapp.com"
+
+development:
+  secret_key_base_dev: 5d2f419e0191343574f521e8a3006d978a7ef7eb741d119dcd9b4887f371102612f77f48c57c2fb0b1e23b0ab8a77ce351358f9c02df110ad63ea95edfbc7919
+
+test:
+  secret_key_base_test: 466048e751958c67e92c1ff353c878ccff70289927de9a65ad8d12a8ffd1da2f935174a07733f068629f751d2b056bc197b3be77397316494e09ae41e5abdf7a
+
+# Do not keep production secrets in the unencrypted secrets file.
+# Instead, either read values from the environment.
+# Or, use `bin/rails secrets:setup` to configure encrypted secrets
+# and move the `production:` environment over there.
+
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+
+
+CLIENT_ID: "f63e525d3f4d3a5b979946f193eb9b13c9f6ccb13662b7eb4804a25939b77cb1"
+
+CLIENT_SECRET: “43e5c5d5a2bf998dd8c2a9c691cb651d7865d6ff53624539fb67845539e796b6”
+
+REDIRECT_URL: "urn:ietf:wg:oauth:2.0:oob"
+
+SITE: "https://tep-lending-library.herokuapp.com"
+

@@ -1,0 +1,51 @@
+<div class="card">
+<div class="card-content">
+<h1>Users</h1>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td><%=user.active ? "Yes" : "No" %></td>
+        <td>
+          <% if can? :edit, user %>
+            <%= link_to edit_user_path(user) do %>
+              <i class="material-icons">edit</i>
+            <% end %> 
+          <% end %>
+        </td>
+        <!-- <td>
+          <% if can? :destroy, user %>
+            <
+            <i class="material-icons">delete</i>
+            
+          <% end %>
+        </td> -->
+      </tr>
+    <% end %>
+    <%= will_paginate @users %>
+  </tbody>
+</table>
+<br>
+<% if can? :new, User %>
+  <%= link_to(new_user_path, class: "waves-effect waves-light btn") do %>
+    <strong>Add a New User</strong>
+  <% end %>
+<% end %>
+</div>
+</div>

@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
+  authorize_resource
   def index
     @orders = Order.all.enter_chronological.paginate(page: params[:page]).per_page(5)
     respond_to do |format|
