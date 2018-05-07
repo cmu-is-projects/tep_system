@@ -3,10 +3,10 @@
 
      <% if logged_in? && (current_user.role?(:admin))%>
      
-       <span class="card-title">Recent Orders</span>
+       <span class="card-title">Recent POS Transactions</span>
           <table class="highlight">
               <% if @recent_orders.empty? %>
-                <p>No recent orders</p>
+                <p>No recent POS Transactions</p>
               <% else %>
                 <thead>
                   <th></th>
