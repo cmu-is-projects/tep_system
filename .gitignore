@@ -29,3 +29,5 @@
 /app/views/.DS_Store
 /app/assets/.DS_Store
 /app/assets/images/.DS_Store
+
+/db/migrate/20180429160347_add_default_user.rb
