@@ -3,7 +3,8 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
 	setup do 
-		@user = FactoryBot.create(:user)
+		login_admin
+    @user = FactoryBot.create(:user)
 	end 
 
 	test "should get index" do
@@ -16,15 +17,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  # test "should create user" do
-  #   assert_difference('User.count') do
-  #     post users_path, params: { user: { username: @user.username, active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
-  #   end
-  #   assert_redirected_to users_path
+  test "should create user" do
+    assert_difference('User.count') do
+      post users_path, params: { user: { username: "blarb", active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: "blarb@blarby.com", role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
+    end
+    assert_redirected_to users_path
 
-  #   post users_path, params: { user: { username: nil, active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
-  #   assert_template :new
-  # end
+    post users_path, params: { user: { username: @user.username, active: @user.active, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, role: @user.role, password: @user.password, password_confirmation: @user.password_confirmation } }
+    assert_template :new
+  end
 
 
   test "should destroy user" do

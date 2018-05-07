@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-content">
     <div class="row">
-    <h5 class="col s11">Information for Order from <%= @order.created_at.strftime(" %B %d, %Y") %> </h5> 
+    <h5 class="col s11">Information for POS Transaction from <%= @order.created_at.strftime(" %B %d, %Y") %> </h5> 
 
     <div class="col s1">
       <i class="material-icons"><%= link_to('edit', edit_order_path(@order))%></i>
