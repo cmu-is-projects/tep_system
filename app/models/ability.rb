@@ -16,7 +16,7 @@ class Ability
             order_item.id == user.order_item
         end
     else
-        can :read, Home
+        #can :read, Home
     end
   end
 end
