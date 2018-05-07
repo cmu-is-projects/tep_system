@@ -2,6 +2,7 @@ require 'test_helper'
 
 class OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_admin
     @user = FactoryBot.create(:user)
     @school = FactoryBot.create(:school)
     @teacher = FactoryBot.create(:teacher, school: @school)
