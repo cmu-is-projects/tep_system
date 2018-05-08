@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20180429160347) do
     t.integer "max_packs"
     t.integer "qty_per_unit"
     t.boolean "active", default: true
+    t.integer "sort"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "sort"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20180429160347) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
     t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
