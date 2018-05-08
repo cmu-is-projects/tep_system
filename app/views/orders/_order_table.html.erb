@@ -25,7 +25,7 @@
         <td><%= order_item.item.name %></td>
         <td><%= order_item.quantity %></td>
         <td><%= order_item.item.try(:pos_trans_id) || "NA" %></td> 
-        <td><%= order_item.uploaded ? "Yes" : "No" %></td>
+        <td><%= order.uploaded ? "Yes" : "No" %></td>
      </tr>
      <% end %>
     <% end %>

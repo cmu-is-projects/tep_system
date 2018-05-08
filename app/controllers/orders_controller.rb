@@ -65,7 +65,7 @@ class OrdersController < ApplicationController
   end
 
   def sync
-    @orders = Order.not_uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
+    @orders = Order.all.not_uploaded.enter_chronological.paginate(page: params[:page]).per_page(20)
   end
 
   private
