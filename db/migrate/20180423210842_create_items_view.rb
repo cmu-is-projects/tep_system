@@ -9,6 +9,7 @@ class CreateItemsView < ActiveRecord::Migration[5.1]
                       (SELECT name FROM salesforce.product_master__c as prod 
                         WHERE prod.sfid = pos.product_master__c), 
                       pos.qty_per_unit__c::INTEGER as qty_per_unit,
+                      pos.qty_multiplier as qty_multiplier,
                       pos.shopping_limit__c as max_packs, 
                       pos.carton__c as carton,
                       (pos.carton__c = 'a0NW0000002RrvPMAS') as active,
