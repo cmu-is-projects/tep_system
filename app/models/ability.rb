@@ -9,12 +9,14 @@ class Ability
         can :manage, :all
 
     elsif user.role? :volunteer
+        can :read, Order
         can :create, Order do |order|
             order.id == user.order_id
         end
         can :create, OrderItem do |order_item|
             order_item.id == user.order_item
         end
+        
     else
         #can :read, Home
     end
