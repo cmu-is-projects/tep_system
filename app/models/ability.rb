@@ -15,8 +15,6 @@ class Ability
         can :create, OrderItem do |order_item|
             order_item.id == user.order_item
         end
-    else
-        can :read, Home
     end
   end
 end
