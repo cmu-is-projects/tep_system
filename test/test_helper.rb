@@ -26,7 +26,13 @@ class ActiveSupport::TestCase
   def login_admin
     @admin = FactoryBot.create(:user, email: "cmanaog@gmail.com", first_name: "Christian", last_name: "Manaog", username: "christian", password: "secret", password_confirmation: "secret", role: "admin", active: true)
     get login_path
-    post sessions_path, params: { username: "christian", password: "secret" }
+    post sessions_path, params: { email: "cmanaog@gmail.com", password: "secret" }
+  end
+
+  def login_volunteer
+    @volunteer = FactoryBot.create(:user, email: "catmeow@meow.com", first_name: "Meowers", last_name: "McMeowers", username: "meowie", password: "password", password_confirmation: "password", role: "volunteer", active: true)
+    get login_path
+    post sessions_path, params: {email: "catmeow@meow.com", password: "password"}
   end
 
   # Spruce up minitest results...

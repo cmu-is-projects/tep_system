@@ -2,7 +2,8 @@ require "test_helper"
 
 class TeachersControllerTest < ActionDispatch::IntegrationTest
 	setup do 
-		@school = FactoryBot.create(:school)
+		login_admin
+        @school = FactoryBot.create(:school)
 		@teacher = FactoryBot.create(:teacher, school: @school)
 	end 
 

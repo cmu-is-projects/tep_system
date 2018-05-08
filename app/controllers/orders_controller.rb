@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     if @order.save
       # save_order_items
-      flash[:notice] = "Successfully added #{@order.id}."
+      flash[:notice] = "Successfully added POS Transaction for #{@order.teacher.name}."
       redirect_to order_path(@order)
     else
       render action: 'new'
