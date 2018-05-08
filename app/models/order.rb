@@ -52,7 +52,7 @@ class Order < ApplicationRecord
         pos.external_id__c = SecureRandom.uuid
         pos.in_related_outgoing_pos__c = oi.item.sfid
         pos.in_contact__c = o.teacher.sfid
-        pos.save!
+        # pos.save!
       end 
     end 
   end

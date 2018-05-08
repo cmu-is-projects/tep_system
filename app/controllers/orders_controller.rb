@@ -58,7 +58,7 @@ class OrdersController < ApplicationController
   end
 
   def upload
-    Order.write_to_salesforce
+    Order.add_to_pos_transactions
     Order.set_uploaded
     flash[:notice] = "Added POS Transactions. Double check Salesforce for updates within 2 minutes."
     redirect_to sync_path
