@@ -32,12 +32,29 @@ class Order < ApplicationRecord
   scope :not_uploaded, -> { where(uploaded: false) }
 
   #Methods
-  def self.set_uploaded
+  def self.set_all_to_uploaded
     self.not_uploaded.update_all(:uploaded => true)
   end
 
-  def self.write_to_salesforce
-    # loop through not_uploaded 
+  # the POS Transaction table is automatically synced to write changes
+  # to Salesforce, so if we add a row to POS Transaction, Heroku Connect
+  # will automatically add the row to Salesforce within 2 minutes
+  def self.add_to_pos_transactions
+    orders = Order.not_uploaded.all
+    orders.each do |o|
+      o.order_items.each do |oi|
+        pos = PosTransaction.new
+        pos.recordtypeid = "012E0000000MzweIAC"
+        pos.first_name__c = o.teacher.first_name
+        pos.last_name__c = o.teacher.last_name
+        pos.units_distributed__c = oi.quantity
+        pos.date_distributed__c = o.shopping_date 
+        pos.external_id__c = SecureRandom.uuid
+        pos.in_related_outgoing_pos__c = oi.item.sfid
+        pos.in_contact__c = o.teacher.sfid
+        pos.save!
+      end 
+    end 
   end
   
   # def self.to_csv
