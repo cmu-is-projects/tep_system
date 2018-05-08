@@ -4,7 +4,7 @@
         <% if @orders.empty? %>
             <p>No POS transactions to review</p>
         <% else %>
-            <%= button_to( "Upload to Salesforce", upload_path(@orders), :method => :patch, class: 'waves-effect waves-light btn-small') %>
+            <%= button_to( "Upload to Salesforce", upload_path(@orders), :method => :patch, class: 'btn') %>
             <%= render :partial => "order_table"%>
         <% end %>
     </div>

@@ -24,40 +24,40 @@
 
             <div class="container">
 
-            <% unless @items.empty? then %>
+                <% unless @items.empty? then %>
 
-                <table>
-                    <!-- only sortable if an admin or manager -->
-                    <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
-                        <tbody class="sortable">  <!-- sortable target -->
-                    <% else %>
-                        <tbody>
-                    <% end %>
-                            <% @items.each do |i| %>
-                                <%=order_form.simple_fields_for :order_items do |oi_form| %>
-                                    <tr id="<%= i.sortable_id %>">
-                                        <td><span class="col s10 offset-s1"><%= i.name + ":" %></span></td>
-                                        <td><div class="hidden-field">
-                                            <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.try(:sfid) || i.id} %>
-                                        </div></td>
-                                        <td><%= oi_form.input :quantity, as: :integer, input_html: {class: "col s3 inline"} %></td>
-                                    </tr>
-                                <%end%>
-                            <% end %>
-                        </tbody>
-                </table>
-                
-            <% else %>
-                <p>There are no active items in the system at this time.</p>
-            <% end %>
+                    <table>
+                        <!-- only sortable if an admin or manager -->
+                        <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
+                            <tbody class="sortable">  <!-- sortable target -->
+                        <% else %>
+                            <tbody>
+                        <% end %>
+                                <% @items.each do |i| %>
+                                    <%=order_form.simple_fields_for :order_items do |oi_form| %>
+                                        <tr id="<%= i.sortable_id %>">
+                                            <td><span class="col s10 offset-s1"><%= i.name + ":" %></span></td>
+                                            <td><div class="hidden-field">
+                                                <%= oi_form.input :item_id, as: :hidden, input_html: { value: i.try(:sfid) || i.id} %>
+                                            </div></td>
+                                            <td><%= oi_form.input :quantity, as: :integer, input_html: {class: "col s3 inline"} %></td>
+                                        </tr>
+                                    <%end%>
+                                <% end %>
+                            </tbody>
+                    </table>
+                    
+                <% else %>
+                    <p>There are no active items in the system at this time.</p>
+                <% end %>
             </div>
         </div>
         
 
         <div class="row">
             <div class="form-actions col s8">
-                <%= order_form.button :submit %>
-                <%= link_to 'Cancel', orders_path, class: 'button alert radius' %>
+                <%= order_form.button :submit, :class => 'btn' %>
+                <%= link_to 'Cancel', orders_path, class: 'btn' %>
             </div>
         </div>
     <% end %>
