@@ -15,8 +15,8 @@ class Item < ApplicationRecord
   	has_many :order_items
   end 
 
-	validates_presence_of :name, :max_packs, :qty_per_unit
-	validates_numericality_of :max_packs, only_integer: true, greater_than_or_equal_to: 0
+	validates_presence_of :name, :qty_per_unit
+	validates_numericality_of :max_packs, only_integer: true, greater_than_or_equal_to: 0, allow_blank: true
 	validates_numericality_of :qty_per_unit, only_integer: true, greater_than: 0
 
 	scope :active, -> {where(active: true)}
