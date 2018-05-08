@@ -4,7 +4,9 @@
     <% if @orders.empty? %>
       <p>No POS transactions in the system right now</p>
     <% else %>
-      <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "waves-effect waves-light btn" %>
+      <% if current_user.role=="admin" %>
+        <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "waves-effect waves-light btn" %>
+      <%end%>
       <%= render :partial => "order_table"%>
     <% end %>
   </div>
