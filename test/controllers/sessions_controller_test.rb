@@ -15,7 +15,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not create session without proper creds" do
     get login_path
-    post sessions_path, params: { username: "admin", password: "password" }
+    post sessions_path, params: { username: "admin@example.com", password: "password" }
     assert_nil session[:user_id]
     assert_template :new
   end

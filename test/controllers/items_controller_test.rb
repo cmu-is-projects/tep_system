@@ -3,6 +3,8 @@ require 'test_helper'
 class ItemsControllerTest < ActionDispatch::IntegrationTest
 
 	setup do 
+    login_admin
+    #@user = FactoryBot.create(:user)
 		@item = FactoryBot.create(:item)
 	end 
 
