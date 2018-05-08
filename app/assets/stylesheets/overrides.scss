@@ -60,6 +60,10 @@ blockquote {
   border-color: orange !important;
 }
 
+#content {
+  min-height: 29em;
+}
+
 /********** FOOTER ********/
 
 footer.page-footer {
@@ -77,9 +81,14 @@ footer ul a{
   color: #383838;
   border-bottom: none !important;
 }
+
 footer.footer-copyright.container {
   color: black;
   /*background-color: #ffa82e;*/
+}
+
+.by_TEP {
+  float: right;
 }
 
 
