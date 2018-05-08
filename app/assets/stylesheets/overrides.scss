@@ -65,7 +65,7 @@ blockquote {
 }
 
 #content {
-  min-height: 29em;
+  min-height: calc(100vh - 390px);
 }
 
 /********** FOOTER ********/
@@ -202,6 +202,17 @@ th.align_center {
 }
 
 /********** FORMS ********/
+/* label focus color */
+.input-field input:focus + label {
+  color: orange !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid orange !important;
+  box-shadow: 0 1px 0 0 orange !important
+}
+
 .switch label input[type=checkbox]:checked + .lever {
   background-color: #ffea00;
 }
