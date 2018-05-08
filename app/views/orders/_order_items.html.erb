@@ -6,12 +6,14 @@
         <th>Item</th>
         <th>Quantity</th>
         <th>Outgoing POS</th>
+        <th>Uploaded to Salesforce?</th>
       </thead>
         <% @order.order_items.each do |orderitem|%>
           <tr> 
             <td><%= orderitem.item.name %></td>
             <td><%= orderitem.quantity%></td>
             <td><%= orderitem.item.try(:pos_trans_id) || "NA" %></td>
+            <td><%= orderitem.uploaded ? "Yes" : "No" %></td>
           </tr>
         <% end %>
 

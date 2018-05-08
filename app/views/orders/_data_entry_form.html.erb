@@ -9,7 +9,6 @@
                 <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
                 <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
                 <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
-                <%= order_form.input :uploaded, as: :hidden, input_html: { value: false } %>
             </div>
         </div>
 
@@ -17,7 +16,7 @@
             <legend> Item Quantities </legend>
 
             <!-- instructions on reordering items -->
-            <% if logged_in? && (current_user.role?(:admin) || (current_user.role?(:manager))) %>
+            <% if logged_in? && current_user.role?(:admin) %>
                 <p><i>Click and drag the items to reorder them.</i></p>
             <% end %>
                 

@@ -5,7 +5,6 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.references :teacher, foreign_key: true
       t.date :shopping_date
       t.date :date_entered
-      t.boolean :uploaded
 
       t.timestamps
     end
