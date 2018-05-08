@@ -10,10 +10,10 @@
     
   </head>
   <body>
-    <%# if logged_in? %>
-        <%= render :partial => "partials/nav" %>
-    <%#end%>
-
+    <header>
+      <%= render :partial => "partials/nav" %>
+    </header>
+    <main>
     <%# GRID LAYOUT %>
     <div class=row>
       <div class="col s9 offset-s2">
@@ -23,6 +23,7 @@
 
       </div>
     </div>
+  </main>
 
   </body>
 

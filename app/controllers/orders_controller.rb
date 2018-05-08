@@ -33,9 +33,10 @@ class OrdersController < ApplicationController
       flash[:notice] = "Successfully added POS Transaction for #{@order.teacher.name}."
       redirect_to order_path(@order)
     else
-      render action: 'new'
-      @items = Item.get_active_items_with_unique_names
+      flash[:notice] = "Error in checking out. Check that shopping date is on or before today."
+      @items = @order.order_items.map{|oi| oi.item}
       order_item = @order.order_items.build
+      render action: 'new'
     end
   end
 
@@ -57,10 +58,9 @@ class OrdersController < ApplicationController
   end
 
   def upload
-    Order.not_uploaded
-    if Order.set_uploaded
-      flash[:notice] = "Successfully uploaded data to Salesforce."
-    end
+    Order.write_to_salesforce
+    Order.set_uploaded
+    flash[:notice] = "Added POS Transactions. Double check Salesforce for updates within 2 minutes."
     redirect_to sync_path
   end
 
