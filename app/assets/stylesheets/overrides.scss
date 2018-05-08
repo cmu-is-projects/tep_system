@@ -202,6 +202,11 @@ th.align_center {
 }
 
 /********** FORMS ********/
+input:focus {
+  border-bottom: 1px solid #0075c5 !important;
+  box-shadow: 0 1px 0 0 #0075c5 !important
+}
+
 ul.dropdown-content.select-dropdown li span {
     color: black;
 }
