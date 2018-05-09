@@ -19,12 +19,15 @@
 //= require jquery_ujs
 //= require jquery-ui/widgets/sortable
 //= require rails_sortable
+//= require best_in_place
 
 // @import "materialize";
 // @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 $(document).ready(function() {
     $('select').material_select();
+    /* Activating Best In Place */
+  	jQuery(".best_in_place").best_in_place();
   });
 
 $(document).on('nested:fieldAdded', function(event){
