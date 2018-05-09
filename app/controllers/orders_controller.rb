@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update_attributes(order_params)
-      flash[:notice] = "Successfully updated #{@order.id}."
+      flash[:notice] = "Successfully updated order for #{@order.teacher.name}."
       redirect_to @order
     else
       render action: 'edit'

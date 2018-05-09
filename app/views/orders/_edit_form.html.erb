@@ -15,11 +15,9 @@
           
           <%= order_form.simple_fields_for :order_items do |oi_form| %>
                 <%= oi_form.input :item_id, collection: Item.alphabetical.all %>
-                <%= oi_form.input :quantity, as: :integer %>
+                <%= oi_form.input :quantity, as: :integer, label_html: {class: 'active'} %>
           <% end %>
       </div>
-      
-      
 
     <div class="row">
 
