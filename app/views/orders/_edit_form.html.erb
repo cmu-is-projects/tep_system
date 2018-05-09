@@ -1,22 +1,15 @@
 <div class="form-wrapper">
 
-  <%= simple_nested_form_for @order, :html => { :class => 'form-horizontal' } do |order_form| %>
+  <%= simple_form_for @order, :html => { :class => 'form-horizontal' } do |order_form| %>
     
       <h1>Edit POS Transaction</h1> 
 
       <div class="row">
         <h5>Transaction Info</h5>
-          
           <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
           <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
           <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
           <%= order_form.input :uploaded, as: :boolean %>
-          
-          
-          <%= order_form.simple_fields_for :order_items do |oi_form| %>
-                <%= oi_form.input :item_id, collection: Item.alphabetical.all %>
-                <%= oi_form.input :quantity, as: :integer %>
-          <% end %>
       </div>
       
       
