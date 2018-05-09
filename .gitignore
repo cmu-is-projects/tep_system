@@ -30,5 +30,9 @@
 /app/assets/.DS_Store
 /app/assets/images/.DS_Store
 
+
+/db/migrate/20180429160347_add_default_user.rb
+
 # Ignore application configuration
 /config/application.yml
+

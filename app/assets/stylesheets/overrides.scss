@@ -202,6 +202,14 @@ th.align_center {
 }
 
 /********** FORMS ********/
+#edit_order {
+  display: in-line block;
+}
+
+#delete_order {
+  display: in-line block;
+}
+
 input:focus {
   border-bottom: 1px solid #0075c5 !important;
   box-shadow: 0 1px 0 0 #0075c5 !important

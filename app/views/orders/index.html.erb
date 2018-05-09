@@ -1,11 +1,13 @@
 <div class="card">
   <div class="card-content">
-    <h1>All Teacher POS Transactions</h1>
+    <h1>All Incoming POS Transactions</h1>
     <% if @orders.empty? %>
-      <p>No POS transactions in the system right now</p>
+      <p>No Incoming POS Transactions in the system right now.</p>
     <% else %>
       <% if current_user.role=="admin" %>
         <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "btn" %>
+        <br/><br/>
+        <p><i>Click on quantity to edit the numbers. Only allowed to edit quantities if the order has not been uploaded yet.</i></p>
       <%end%>
       <%= render :partial => "order_table"%>
     <% end %>

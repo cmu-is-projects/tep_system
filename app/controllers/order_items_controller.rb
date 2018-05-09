@@ -15,6 +15,18 @@ class OrderItemsController < ApplicationController
 		end 
 	end 
 
+	def update 
+		@order_item = OrderItem.find params[:id]
+
+		respond_to do |format|
+		  if @order_item.update_attributes(order_item_params)
+				format.json { respond_with_bip(@order_item) }
+		  else
+				format.json { respond_with_bip(@order_item) }
+		  end
+		end
+	end
+
 	def destroy
 		@order_item.destroy
 		redirect_to orders_path

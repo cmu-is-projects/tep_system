@@ -1,17 +1,21 @@
 <div class="card">
   <div class="card-content">
     <span class="card-title">POS Transaction</span>
+    <% if current_user.role=="admin" %> 
+      <p><i>Click on quantity to edit the numbers. Only allowed to edit quantities if the order has not been uploaded yet.</i></p>
+    <% end %> 
+    <p>
     <table class="highlight">
       <thead>
         <th>Item</th>
         <th>Quantity</th>
         <th>Outgoing POS</th>
       </thead>
-        <% @order.order_items.each do |orderitem|%>
+        <% @order.order_items.each do |order_item|%>
           <tr> 
-            <td><%= orderitem.item.name %></td>
-            <td><%= orderitem.quantity%></td>
-            <td><%= orderitem.item.try(:pos_trans_id) || "NA" %></td>
+            <td><%= order_item.item.name %></td>
+            <td><%= best_in_place_if current_user.role=="admin" && !@order.uploaded, order_item, :quantity, as: :input %></td>
+            <td><%= order_item.item.try(:pos_trans_id) || "NA" %></td>
           </tr>
         <% end %>
 
