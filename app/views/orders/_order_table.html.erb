@@ -23,7 +23,7 @@
         <% end %>
         <td><%= order.shopping_date.strftime("%m/%d/%y") %></td>
         <td><%= order_item.item.name %></td>
-        <td><%= best_in_place_if current_user.role=="admin", order_item, :quantity, as: :input %></td>
+        <td><%= best_in_place_if current_user.role=="admin" && !order.uploaded, order_item, :quantity, as: :input %></td>
         <td><%= order_item.item.try(:pos_trans_id) || "NA" %></td> 
         <td><%= order.uploaded ? "Yes" : "No" %></td>
      </tr>
