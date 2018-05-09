@@ -4,7 +4,7 @@
         <% if @orders.empty? %>
             <p>No Incoming POS transactions to review. All synced transactions should show up in Salesforce within the next two minutes of syncing. If not, you may have to export as csv and upload the ones that don't appear to be in Salesforce.</p>
         <% else %>
-            <%= button_to( "Upload to Salesforce", upload_path(@orders), :method => :patch, class: 'waves-effect waves-light btn-small') %>
+            <%= button_to( "Upload to Salesforce", upload_path(@orders), :method => :patch, class: 'btn') %>
             <%= render :partial => "order_table"%>
         <% end %>
     </div>

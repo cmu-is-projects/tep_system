@@ -34,9 +34,11 @@ class OrdersController < ApplicationController
       redirect_to order_path(@order)
     else
       flash[:notice] = "Error in checking out. Check that shopping date is on or before today."
-      @items = @order.order_items.map{|oi| oi.item}
-      order_item = @order.order_items.build
-      render action: 'new'
+      # @items = @order.order_items.map{|oi| oi.item}
+      # order_item = @order.order_items.build
+      # render action: 'new'
+      @items = Item.order(:sort).get_items_with_unique_names
+      render action: 'new', locals: { items: @items, order_item: @order.order_items.build }
     end
   end
 

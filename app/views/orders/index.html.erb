@@ -5,7 +5,7 @@
       <p>No Incoming POS Transactions in the system right now.</p>
     <% else %>
       <% if current_user.role=="admin" %>
-        <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "waves-effect waves-light btn" %>
+        <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "btn" %>
       <%end%>
       <%= render :partial => "order_table"%>
     <% end %>

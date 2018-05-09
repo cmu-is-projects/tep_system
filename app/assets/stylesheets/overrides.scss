@@ -15,6 +15,10 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+#logo {
+  padding-top: 0.5em;
+}
+
 #nav ul a {
   text-align: right;
   color: #4F4F4F;
@@ -60,6 +64,10 @@ blockquote {
   border-color: orange !important;
 }
 
+#content {
+  min-height: calc(100vh - 390px);
+}
+
 /********** FOOTER ********/
 
 footer.page-footer {
@@ -77,9 +85,14 @@ footer ul a{
   color: #383838;
   border-bottom: none !important;
 }
+
 footer.footer-copyright.container {
   color: black;
   /*background-color: #ffa82e;*/
+}
+
+.by_TEP {
+  float: right;
 }
 
 
@@ -160,7 +173,7 @@ th.align_center {
 
 /********** BUTTONS ********/
 .btn {
-  background-color: #ffd600;
+  background-color: #0075c5 !important;
   color: #000;
 }
 
@@ -189,6 +202,26 @@ th.align_center {
 }
 
 /********** FORMS ********/
+input:focus {
+  border-bottom: 1px solid #0075c5 !important;
+  box-shadow: 0 1px 0 0 #0075c5 !important
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: black;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+  color: #0075c5 !important;
+}
+
+/* label underline focus color */
+.row .input-field input:focus {
+  border-bottom: 1px solid #0075c5 !important;
+  box-shadow: 0 1px 0 0 #0075c5 !important
+}
+
 .switch label input[type=checkbox]:checked + .lever {
   background-color: #ffea00;
 }
@@ -258,6 +291,10 @@ input[type=text].search {
 }
 
 /********** FLASH MSGs ********/
+.alert {
+  color: red !important;
+}
+
 .alert-box {
   border-style: solid;
   border-width: 1px;
