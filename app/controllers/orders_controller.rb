@@ -33,10 +33,8 @@ class OrdersController < ApplicationController
       flash[:notice] = "Successfully added POS Transaction for #{@order.teacher.name}."
       redirect_to order_path(@order)
     else
-      @items = Item.get_active_items_with_unique_names
-      render action: 'new'
-      @items = Item.get_active_items_with_unique_names
-      order_item = @order.order_items.build
+      @items = Item.order(:sort).get_items_with_unique_names
+      render action: 'new', locals: { items: @items, order_item: @order.order_items.build }
     end
   end
 
