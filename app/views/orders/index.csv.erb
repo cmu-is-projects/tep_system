@@ -13,7 +13,7 @@
         	order.teacher.last_name, 
         	order.teacher.first_name, 
         	order_item.item.name, 
-        	order_item.quantity*order_item.item.qty_per_unit, 
+        	order_item.quantity, 
         	order.shopping_date, 
         	'012E0000000Mzwe', 
         	order_item.item.try(:pos_trans_id) || "NA", 
