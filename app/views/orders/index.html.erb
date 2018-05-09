@@ -6,6 +6,8 @@
     <% else %>
       <% if current_user.role=="admin" %>
         <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "btn" %>
+        <br/><br/>
+        <p><i>Click on quantity to edit the numbers. Only allowed to edit quantities if the order has not been uploaded yet.</i></p>
       <%end%>
       <%= render :partial => "order_table"%>
     <% end %>
