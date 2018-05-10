@@ -9,13 +9,6 @@
           <%= order_form.input :teacher_id, collection: Teacher.alphabetical.all,required: true %>
           <%= order_form.input :user_id, collection: User.alphabetical.all, required: true %>
           <%= order_form.input :shopping_date, as: :string, input_html: {type: :date, class: "col s6"} %>
-          <%= order_form.input :uploaded, as: :hidden, input_html: { value: false } %>
-          
-          
-          <%= order_form.simple_fields_for :order_items do |oi_form| %>
-                <%= oi_form.input :item_id, collection: Item.alphabetical.all %>
-                <%= oi_form.input :quantity, as: :integer, label_html: {class: 'active'} %>
-          <% end %>
           <%= order_form.input :uploaded, as: :boolean %>
       </div>
 

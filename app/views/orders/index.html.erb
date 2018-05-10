@@ -6,6 +6,7 @@
     <% else %>
       <% if current_user.role=="admin" %>
         <%= link_to 'Export POS transactions as CSV', orders_path(format: :csv), class: "btn" %>
+        <%= link_to 'Delete uploaded orders', destroy_all_path(@orders), class: "btn red right", method: :delete, data: {confirm: 'Are you sure you wish to delete ALL uploaded orders from DataCat? This function is meant to flush out data that is already in Salesforce.'} %>
         <br/><br/>
         <p><i>Click on quantity to edit the numbers. Only allowed to edit quantities if the order has not been uploaded yet.</i></p>
       <%end%>

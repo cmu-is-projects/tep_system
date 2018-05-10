@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   # custom paths
   get 'sync', to: 'orders#sync', as: 'sync'
   patch 'upload', to: 'orders#upload', as: 'upload'
+  delete 'destroy_all', to: 'orders#destroy_all', as: 'destroy_all'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

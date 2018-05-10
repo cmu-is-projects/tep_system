@@ -59,6 +59,15 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy_all
+    @orders = Order.uploaded.all
+    if @orders.destroy_all
+      redirect_to orders_url, notice: "Successfully deleted uploaded orders from DataCat."
+    else
+      redirect_to orders_url, notice: "System error: unable to destroy uploaded orders."
+    end
+  end
+
   def upload
     Order.add_to_pos_transactions
     Order.set_all_to_uploaded

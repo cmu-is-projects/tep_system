@@ -172,6 +172,7 @@ th.align_center {
 }
 
 /********** BUTTONS ********/
+
 .btn {
   background-color: #0075c5 !important;
   color: #000;
@@ -202,6 +203,13 @@ th.align_center {
 }
 
 /********** FORMS ********/
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #0075c5 !important;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #649DC5 !important;
+}
+
 #edit_order {
   display: in-line block;
 }
