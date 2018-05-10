@@ -31,14 +31,16 @@ class OrdersController < ApplicationController
     if @order.save
       # save_order_items
       flash[:notice] = "Successfully added POS Transaction for #{@order.teacher.name}."
-      redirect_to order_path(@order)
+      @new_order = Order.new
+      @items = Item.order(:sort).get_items_with_unique_names
+      redirect_to :action => 'new', locals: { items: @items, order_item: @new_order.order_items.build }
     else
-      flash[:notice] = "Error in checking out. Check that shopping date is on or before today."
+      flash[:notice] = "Error in checking out. Fill out all fields, and check that shopping date is on or before today."
       # @items = @order.order_items.map{|oi| oi.item}
       # order_item = @order.order_items.build
       # render action: 'new'
       @items = Item.order(:sort).get_items_with_unique_names
-      render action: 'new', locals: { items: @items, order_item: @order.order_items.build }
+      redirect_to :action => 'new', locals: { items: @items, order_item: @order.order_items.build }
     end
   end
 
