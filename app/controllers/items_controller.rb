@@ -18,6 +18,18 @@ class ItemsController < ApplicationController
 		end 
 	end 
 
+	def update 
+		@item = Item.find params[:id]
+
+		respond_to do |format|
+		  if @item.update_attributes(item_params)
+				format.json { respond_with_bip(@item) }
+		  else
+				format.json { respond_with_bip(@item) }
+		  end
+		end
+	end 
+
 	def destroy
 		@item = Item.find(params[:id])
 		if @item.destroy
