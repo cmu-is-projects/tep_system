@@ -8,9 +8,9 @@
       <th>Name</th>
       <th>Maximum Packs</th>
       <th>Quantity per Unit</th>
+      <th>Quantity Multiplier</th>
       <th>POS Transaction</th>
       <th>Carton SFID</th>
-      <th>Active</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +19,15 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.name %></td>
-        <td><%= item.max_packs %></td>
+        <td class="blue-text"><%= best_in_place_if current_user.role=="admin", item, :max_packs, as: :input %></td>
         <td><%= item.qty_per_unit %></td>
+        <% if Item.sync_to_salesforce? %>
+          <td class="blue-text"><%= best_in_place_if current_user.role=="admin", item, :qty_multiplier, as: :input %></td>
+        <% else %>
+          <td>NA</td>
+        <% end %> 
         <td><%= item.try(:pos_trans_id) || "NA" %></td>
         <td><%= item.try(:carton) || "NA" %></td>
-        <td><%= item.active ? "Yes" : "No" %></td>
       </tr>
     <% end %>
     
