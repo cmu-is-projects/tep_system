@@ -16,7 +16,7 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize-form
-//= require jquery_ujs
+
 //= require jquery-ui/widgets/sortable
 //= require rails_sortable
 //= require best_in_place
