@@ -1,3 +1,8 @@
+<style>
+    tr {
+        cursor: pointer;
+    }
+</style>
 <table class="highlight"> 
     <thead>
         <tr>
@@ -14,7 +19,7 @@
     <% for order in @orders %>
         <% for order_item in order.order_items %>
     <tr>
-        <td><i class="material-icons"><%= link_to('search', order_path(order))%></i></td>
+        <td><i class="material-icons"><%= link_to('search', order_path(order), :class => 'order-link')%></i></td>
         <td><%= link_to( order.teacher.name, teacher_path(order.teacher)) %></td>
         <% if order.teacher.belongs_to_valid_school? %>
           <td><%= link_to order.teacher.school.name, school_path(order.teacher.school) %></td>
@@ -29,5 +34,26 @@
      </tr>
      <% end %>
     <% end %>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            $('tr').on('click', function(e) {
+                let $target = $(e.target);
+                // if target is a column without its own link, click row icon
+                if ($target.is('td') && !$target.find('a, .best_in_place').length) {
+                    $(this).find('.order-link')[0].click();
+                }
+                // if target is a column with own link or best in place, click that thing
+                else {
+                    $target.find('a, .best_in_place')[0].click();
+                }
+            });
+            // add hover css to td's with links
+            $('td:has(a:not(.order-link))').mouseenter(function() {
+                $(this).css("background", "rgb(247, 227, 206)");
+            }).mouseleave(function() {
+                $(this).css("background", "");
+            });
+        });
+    </script>
     <%= will_paginate @orders, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next", class: "digg_pagination right" %>
 </table>

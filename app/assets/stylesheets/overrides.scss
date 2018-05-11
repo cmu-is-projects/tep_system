@@ -9,6 +9,12 @@ html {
 
 /********** TOPBAR & NAV ********/
 
+header {
+  position: relative;
+  margin-bottom: 30px;
+  height: 64px;
+}
+
 #nav {
   background-color: white;
   box-shadow: none !important;
@@ -16,7 +22,14 @@ html {
 }
 
 #logo {
-  padding-top: 0.5em;
+  width: 201.531px; height: 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#logo img {
+  height: 40px;
 }
 
 #nav ul a {
@@ -81,7 +94,12 @@ footer.page-footer {
   line-height: 2rem;
 }
 
-footer ul a{
+footer.page-footer .container {
+  margin-left: 16.6666666667%;
+  padding-left: 0.75rem;
+}
+
+footer ul a {
   color: #383838;
   border-bottom: none !important;
 }
@@ -89,6 +107,10 @@ footer ul a{
 footer.footer-copyright.container {
   color: black;
   /*background-color: #ffa82e;*/
+}
+
+footer .header {
+  font-weight: bolder;
 }
 
 .by_TEP {

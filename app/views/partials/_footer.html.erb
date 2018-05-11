@@ -9,7 +9,7 @@
       </div>
       <div class="col l4 offset-l2 s12">
         <% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
-          <p> Links to Other Pages</p>
+          <p class="header"> Links to Other Pages</p>
           <ul>
             <li><%= link_to 'Teachers', teachers_path, :class => current_class?(teachers_path) %></li>
             <li><%= link_to 'Schools', schools_path, :class => current_class?(schools_path) %></li>
