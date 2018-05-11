@@ -20,6 +20,15 @@ heroku run rake db:migrate
 ```
 Then you can run `heroku open` to visit the app in your browser, and `heroku pg:psql` to work with your Heroku Postgres database in your terminal.   
 
+## Precompiling Assets
+If styles and fonts are not working properly after deploying to heroku, you may need to run these commands locally to manually precompile assets. 
+```
+$ rake assets:precompile RAILS_ENV=production
+$ git add .
+$ git commit -a -m "Assets"
+$ git push heroku master
+```
+
 ## Running Locally
 To make our code run locally as well as on Heroku, we had to if statements in the migrations and models to check whether the salesforce tables exists and only execute certain commands if they do.  
 From a [stackoverflow](https://stackoverflow.com/questions/6590107/check-if-a-table-exists-in-rails) post, you can check if tables/views exists by doing:  
