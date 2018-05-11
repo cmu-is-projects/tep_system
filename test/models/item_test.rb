@@ -12,7 +12,6 @@ class ItemTest < ActiveSupport::TestCase
 	should allow_value(nil).for(:max_packs)
 	should_not allow_value(-2).for(:max_packs)
 	should_not allow_value("bad").for(:max_packs)
-	should_not allow_value(1.5).for(:max_packs)
 
 	should allow_value(1).for(:qty_per_unit)
 	should allow_value(10).for(:qty_per_unit)

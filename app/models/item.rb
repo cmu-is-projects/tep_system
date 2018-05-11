@@ -16,14 +16,14 @@ class Item < ApplicationRecord
   end 
 
 	validates_presence_of :name, :qty_per_unit
-	validates_numericality_of :max_packs, greater_than_or_equal_to: 0, only_integer: true, allow_blank: true
+	validates_numericality_of :max_packs, greater_than_or_equal_to: 0, allow_blank: true
 	validates_numericality_of :qty_per_unit, only_integer: true, greater_than: 0
 
 	scope :active, -> {where(active: true)}
 	scope :inactive, -> {where(active: false)}
 	scope :alphabetical, ->{order(:name)}
 
-	set_sortable :sort  # Indicate a sort column
+	set_sortable :sort, without_updating_timestamps: true # Indicate a sort column
  
 	def self.get_items_with_unique_names
 		Item.order(:name, :qty_per_unit).uniq(&:name)
