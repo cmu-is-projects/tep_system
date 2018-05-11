@@ -31,20 +31,19 @@ class OrdersController < ApplicationController
     if @order.save
       # save_order_items
       flash[:notice] = "Successfully added POS Transaction for #{@order.teacher.name}."
-      redirect_to order_path(@order)
+      redirect_to :action => 'new'
     else
-      flash[:notice] = "Error in checking out. Check that shopping date is on or before today."
+      flash[:error] = "Error in checking out. Fill out all fields, and check that shopping date is on or before today."
       # @items = @order.order_items.map{|oi| oi.item}
       # order_item = @order.order_items.build
       # render action: 'new'
-      @items = Item.order(:sort).get_items_with_unique_names
-      render action: 'new', locals: { items: @items, order_item: @order.order_items.build }
+      redirect_to :action => 'new'
     end
   end
 
   def update
     if @order.update_attributes(order_params)
-      flash[:notice] = "Successfully updated #{@order.id}."
+      flash[:notice] = "Successfully updated order for #{@order.teacher.name}."
       redirect_to @order
     else
       render action: 'edit'
@@ -56,6 +55,15 @@ class OrdersController < ApplicationController
       redirect_to orders_url, notice: "Successfully removed Order #{@order.id}."
     else
       render action: 'show'
+    end
+  end
+
+  def destroy_all
+    @orders = Order.uploaded.all
+    if @orders.destroy_all
+      redirect_to orders_url, notice: "Successfully deleted uploaded orders from DataCat."
+    else
+      redirect_to orders_url, notice: "System error: unable to destroy uploaded orders."
     end
   end
 

@@ -4,13 +4,12 @@ class ItemTest < ActiveSupport::TestCase
 	should have_many(:order_items)
 
 	should validate_presence_of(:name)
-	should validate_presence_of(:max_packs)
 	should validate_presence_of(:qty_per_unit)
 
 	should allow_value(1).for(:max_packs)
 	should allow_value(10).for(:max_packs)
 	should allow_value(125001).for(:max_packs)
-	should_not allow_value(nil).for(:max_packs)
+	should allow_value(nil).for(:max_packs)
 	should_not allow_value(-2).for(:max_packs)
 	should_not allow_value("bad").for(:max_packs)
 	should_not allow_value(1.5).for(:max_packs)
