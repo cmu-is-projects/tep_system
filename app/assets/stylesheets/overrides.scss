@@ -98,34 +98,52 @@ footer.footer-copyright.container {
 
 /********** PAGINATION (https://gist.github.com/amuino/172248) ********/
 
-.pagination {
-    font-size: 12px;
-    color: #4FA4D8;
-    float: right;
-}
-
-.pagination > * {
-    margin-right: 0.1em;
-    padding: 0.3em 0.4em;
-}
-
-.pagination a:hover {
-    background: #0078C1 none repeat scroll 0 0;
-}
-
-.pagination a:active {
-    text-shadow: none;
-}
-
-.pagination .current {
-    background: darkgray none repeat scroll 0 0;
+.digg_pagination {
+  background: white;
+  cursor: default;
+  /* self-clearing method: */ }
+  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .digg_pagination .disabled {
+    color: #999999;
+    border: 1px solid #dddddd; }
+  .digg_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #0075c5;
     color: white;
-}
-
-.pagination .disabled {
-    color: darkgray;
-}
-
+    border: 1px solid #0075c5; }
+  .digg_pagination a {
+    text-decoration: none;
+    color: #0075c5;
+    border: 1px solid #0075c5; }
+    .digg_pagination a:hover, .digg_pagination a:focus {
+      color: #000033;
+      border-color: #000033; }
+  .digg_pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .digg_pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .digg_pagination {
+    height: 1%; }
+  *:first-child + html .digg_pagination {
+    overflow: hidden; }
 
 
 /********** TABLES ********/
@@ -172,6 +190,7 @@ th.align_center {
 }
 
 /********** BUTTONS ********/
+
 .btn {
   background-color: #0075c5 !important;
   color: #000;
@@ -202,6 +221,21 @@ th.align_center {
 }
 
 /********** FORMS ********/
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #0075c5 !important;
+}
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #649DC5 !important;
+}
+
+#edit_order {
+  display: in-line block;
+}
+
+#delete_order {
+  display: in-line block;
+}
+
 input:focus {
   border-bottom: 1px solid #0075c5 !important;
   box-shadow: 0 1px 0 0 #0075c5 !important

@@ -4,7 +4,6 @@ class User < ApplicationRecord
     has_secure_password
     has_many :orders
 
-
     # Validations
     # make sure required fields are present
     validates_presence_of :email, :password_digest
@@ -22,6 +21,10 @@ class User < ApplicationRecord
 
     def name
         "#{last_name}, #{first_name}"
+    end
+
+    def full_name
+        "#{first_name} #{last_name}"
     end
 
     def role?(authorized_role)

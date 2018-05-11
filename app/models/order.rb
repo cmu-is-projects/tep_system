@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   before_validation :set_dates
+  before_destroy :delete_order_items
 
   belongs_to :user
 
@@ -79,5 +80,10 @@ class Order < ApplicationRecord
       self.shopping_date = self.date_entered
     end
     return true
+  end
+
+  def delete_order_items
+    order_items = self.order_items
+    order_items.destroy_all
   end
 end

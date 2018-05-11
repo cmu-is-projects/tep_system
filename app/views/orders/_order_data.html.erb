@@ -4,9 +4,17 @@
     <h5 class="col s11">Information for POS Transaction from <%= @order.created_at.strftime(" %B %d, %Y") %> </h5> 
 
     <div class="col s1">
+
+      <% if can? :destroy, @order %>
+          <%= link_to(order_path(@order), method: :delete, data: {confirm: 'Are you sure you wish to delete this order?'}) do %>
+              <i class="material-icons">delete</i>
+          <% end %>
+      <% end %>
+
       <% if current_user.role=="admin" %>
         <i class="material-icons"><%= link_to('edit', edit_order_path(@order))%></i>
       <%end%>
+
     </div>
     </div>
     </br>
